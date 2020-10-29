@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/Login/Login",
+    "pages/Menu/Menu",
+    "pages/Register/Register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F3721C",
+    "navigationBarTitleText": "신공프렌즈",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

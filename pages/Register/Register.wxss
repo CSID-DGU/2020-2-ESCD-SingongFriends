@@ -1,0 +1,40 @@
+/* pages/Menu/Menu.wxss */
+
+.Register {
+  margin: 20px;
+  margin-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 120px;
+  padding-right: 120px;
+  background-color: #F4B183;
+  border-radius: 0.1cm;
+  border: 1px solid black;
+  color: white;
+}
+
+.Bill {
+  text-align: center;
+  padding-right: 8px;
+}
+
+.Receipt {
+  text-align: center;
+  padding-left: 8px;
+}
+
+.Register_btn {
+  margin-top: 10px;
+}
+
+#button {
+  min-width: 128px;
+  max-height: 125px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#image {
+  max-height: 100px;
+  max-width: 100px;
+}

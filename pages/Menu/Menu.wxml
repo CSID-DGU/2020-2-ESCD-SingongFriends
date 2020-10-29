@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="Menu">
+    <text>메뉴</text>
+  </view>
+  <view class="RegisterBtn">
+    <button id="button">등록</button>
+  </view>
+  <view class="Scholarship">
+    <button id="button">장학</button>
+  </view>
+  <view class="Curriculum">
+    <button id="button">이수과정</button>
+  </view>
+</view>
