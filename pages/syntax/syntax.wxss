@@ -1,0 +1,27 @@
+/* pages/syntax/syntax.wxss */
+#state{
+  position: absolute;
+  right:20px;
+  padding-top: 5px;
+  text-align: center;
+  color: blue;
+  font-size: 10px;
+}
+.ctrtext{
+  margin-top: 10px;
+  color: black;
+  border-color: black;
+  background-origin: padding-box;
+  border-style: double;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 280px;
+  padding-left: 20px;
+}
+#ctr{
+  margin-top: 30px;
+  text-align: center;
+  background-color: rgb(197, 253, 253);
+}
+.cost{}
+.semester{}

@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/syntax/syntax",
+    "pages/page3/page3",
+    "pages/page2/page2",
+
+    "pages/myinfo/myinfo"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F3721C",
+    "navigationBarTitleText": "신공프렌즈",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "home"
+      },
+      {
+        "pagePath": "pages/myinfo/myinfo",
+        "text": "2번 패이지"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

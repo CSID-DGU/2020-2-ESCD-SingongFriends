@@ -1,0 +1,36 @@
+<!--pages/syntax/syntax.wxml-->
+
+<!--<view>{{ar[1]}}</view>-->
+<!-- <block wx:for="{{ar}}">
+  <view> {{index}} => </view>
+  <view> {{item}} </view>
+</block> -->
+
+<!-- <block wx:for="{{arobj}}">
+  <view> {{index}} => </view>
+  <view> {{item}} </view>
+  <view> {{item.key3}} </view>
+</block> -->
+
+
+<view class="container">
+<view class="ctrtext" id="ctr" bindtap="gopage2">납부 내역</view>
+</view>
+<!-- <block>
+  <view class="ctrtext"  bindtap="go">
+    <text class="cost">{{object.key1}}</text>
+    <text class="semester"> {{object.key3}}</text>
+    <text class="state">({{object.key2}}) </text>
+  </view>
+</block> -->
+<block wx:for="{{arobj}}">
+  <!-- <view> {{index}} => </view>
+  <view> {{item}} </view> -->
+<view class="container">
+
+  <view class="ctrtext">
+  <text> {{item.key1}}원 </text>
+  <text> {{item.key3}} </text>
+  <text id="state"> {{item.key2}} </text>
+</view></view>
+</block> 
