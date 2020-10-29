@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top-hor-bar"></view>
+
+  <view class="content-container">
+    <view style="display:flex;flex-direction:row;justify-content:space-evenly">
+      <label style="margin-right:36px">조회학기</label> 
+      <label>2020-1학기</label>  
+    </view>
+    <view class="top-hor-bar"></view>
+    <view style="display:flex;flex-direction:column">
+      <label style="margin-bottom:12px;font-size:13px">학기우수장학금 : 100,000원</label>
+      <label style="margin-bottom:12px;font-size:13px">강좌수석장학금 : 100,000원</label>
+      <label style="margin-bottom:12px;font-size:13px">국가장학금 : 350,000원</label>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/register/index",
+    "pages/history/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F3721C",
+    "navigationBarTitleText": "신공프렌즈",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "Home"
+    },
+    {
+      "pagePath": "pages/register/index",
+      "text": "Register"    
+    },
+    {
+        "pagePath": "pages/history/index",
+        "text": "History"    
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
