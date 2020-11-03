@@ -1,6 +1,7 @@
 {
   "ids": {
-    "Todo": 5
+    "Todo": 5,
+    "Student": 3
   },
   "models": {
     "Todo": {
@@ -8,6 +9,10 @@
       "2": "{\"title\":\"destroy alderaan\",\"desc\":\"Make sure there are no survivors left!\",\"id\":2}",
       "3": "{\"title\":\"play space invaders\",\"desc\":\"Become the very best!\",\"id\":3}",
       "4": "{\"title\":\"crush rebel scum\",\"desc\":\"Every.Last.One.\",\"id\":4}"
+    },
+    "Student": {
+      "1": "{\"name\":\"jun\",\"studentCode\":\"2015112391\",\"wechatToken\":\"kro342rj432jtr3r3r\",\"studentId\":1}",
+      "2": "{\"name\":\"keyne\",\"studentCode\":\"2015112331\",\"wechatToken\":\"kro342rj432jtr3r3r\",\"studentId\":2}"
     }
   }
 }
