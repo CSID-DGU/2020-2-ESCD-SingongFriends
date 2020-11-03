@@ -1,0 +1,11 @@
+<!--pages/staris/curlist/curlist.wxml-->
+<block wx:for="{{curlist}}">
+  <!-- <view> {{index}} => </view>
+  <view> {{item}} </view> -->
+<view class="container">
+
+  <view class="ctrtext">
+  <text> {{item.f}}원 </text>
+  <text> {{item.l}} </text>
+</view></view>
+</block> 

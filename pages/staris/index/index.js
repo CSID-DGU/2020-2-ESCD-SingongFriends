@@ -14,7 +14,7 @@ Page({
    request:function(url, method = "GET") {
     var that=this
     wx.request({
-      url: 'http://localhost:8052/web/andtest.do',
+      url: 'http://localhost:8052/web/androidtest.do',
       method: 'GET',
       data: {
         
@@ -28,8 +28,10 @@ Page({
         //console.log(res);
         console.log('됬어?');
       
-        console.log(res.data.test);
-        that.setData({a:res.data.test});
+        console.log(res.data);
+        console.log(res.data.sendData);
+        console.log(res.data.sendData[1]["f"]);
+        that.setData({a:res.data.sendData[1]["l"]});
         console.log(that.data.a);
       },
       fail: function(){
