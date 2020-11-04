@@ -5,7 +5,7 @@
 <view class="container">
 
   <view class="ctrtext">
-  <text> {{item.f}}원 </text>
-  <text> {{item.l}} </text>
+  <text> {{item.f}}학기 </text>
+  <text> {{item.l}}추천 </text>
 </view></view>
 </block> 
