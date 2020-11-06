@@ -29,8 +29,8 @@
 <view class="container">
 
   <view class="ctrtext">
-  <text> {{item.key1}}원 </text>
-  <text> {{item.key3}} </text>
-  <text id="state"> {{item.key2}} </text>
+  <text> {{item.f}}원 </text>
+  <text> {{item.l}} </text>
+  <!-- <text id="state"> {{item.key2}} </text> -->
 </view></view>
 </block> 

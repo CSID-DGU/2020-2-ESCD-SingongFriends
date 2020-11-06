@@ -75,6 +75,27 @@
           "id": -1,
           "name": "pages/page3/page3",
           "pathName": "pages/page3/page3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/staris/page2/page2",
+          "pathName": "pages/staris/page2/page2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/staris/page3/page3",
+          "pathName": "pages/staris/page3/page3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/staris/syntax",
+          "pathName": "pages/staris/syntax/syntax",
           "scene": null
         }
       ]

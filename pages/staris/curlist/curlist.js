@@ -9,27 +9,32 @@ Page({
 sesid:null,
 curlist:[],
   },
-
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  
+onLoad: function (options) {
 console.log("culist : "+app.globalData.sesid);
 this.setData({
   sesid:app.globalData.sesid
 })
-
 console.log("culistid : "+this.data.sesid);
-
-
 var that=this
+// url: 'http://localhost:8052/web/androidtest.do'+'?id='+that.data.sesid,
+//http://119.28.235.170/explorer // 
 wx.request({
-  url: 'http://localhost:8052/web/androidtest.do'+'?id='+that.data.sesid,
-  method: 'GET',
+ url:'http://119.28.235.170/students',
+  method: 'POST',
+  data:{
+    name: "pay",
+    studentCode: "20121313",
+    wechatToken: "helloworld"
+  },
   success: function (res) {
-    that.setData({curlist:res.data.sendData})
-    console.log(that.data.curlist);
-    
+    console.log(JSON.stringify(res))
+  // that.setData({curlist:res.data.sendData})
+   // console.log(that.data);
+  //  console.log(res.data[0].studentId)
   },
   fail: function(){  },
   complete: function(){

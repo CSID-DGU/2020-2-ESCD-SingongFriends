@@ -1,12 +1,13 @@
 /* pages/syntax/syntax.wxss */
 #logotxt{
-  margin-top: 80px;
-  font-size: 10px;
+  margin-top: 50%;
+  font-size: 15px;
   color:orange;
 }
 
   .ctrtext{
   margin-top: 10px;
+  text-align: center;
   color: black;
   border-color: cyan;
   background-origin: padding-box; 
@@ -14,14 +15,22 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.ctrtext2{
+  border-color: black;
+  background-origin: padding-box; 
+  border-style: double;
+  text-align: center;
+  
+  margin-top: 10px;
+}
 .cost{
-margin-left: 150px;
+margin-right:10%;
 }
 .semester{
-  margin-left: 140px;
+
   text-align: right;
 }
 .state{
   color: blue;
-  font-size: 10px;
+  font-size: 15px;
 }

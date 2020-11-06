@@ -22,7 +22,8 @@ wx.navigateTo({
    */
   onLoad: function (options) {
     app.globalData.sesid="1234";
-console.log(app.globalData.sesid)
+    console.log(app.globalData.sesid)
+
   },
 
   /**

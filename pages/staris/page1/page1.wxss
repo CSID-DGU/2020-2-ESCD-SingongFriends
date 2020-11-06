@@ -5,9 +5,10 @@
   padding-top: 5px;
   text-align: center;
   color: blue;
-  font-size: 10px;
+  font-size: 15px;
 }
 .ctrtext{
+  text-align: center;
   margin-top: 10px;
   color: black;
   border-color: black;
@@ -15,7 +16,7 @@
   border-style: double;
   padding-top: 10px;
   padding-bottom: 10px;
-  min-width: 280px;
+  width:90%;
   padding-left: 20px;
 }
 #ctr{

@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/staris/page1/page1",
+
+    "pages/staris/page3/page3",
     "pages/staris/test/test",
     "pages/staris/curlist/curlist",
     "pages/staris/index/index",
-    "pages/staris/syntax/syntax",
-    "pages/staris/page3/page3",
     "pages/staris/page2/page2",
     "pages/staris/myinfo/myinfo"
   ],
