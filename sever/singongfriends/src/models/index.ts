@@ -6,3 +6,4 @@ export * from './student.model';
 export * from './student-expense.model';
 export * from './student-scholar.model';
 
+export * from './school-student.model';

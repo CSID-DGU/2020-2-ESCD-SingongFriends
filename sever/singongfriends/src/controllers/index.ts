@@ -6,3 +6,4 @@ export * from './semester.controller';
 export * from './student.controller';
 export * from './student-expense.controller';
 export * from './student-scholar.controller';
+export * from './school-student.controller';

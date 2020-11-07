@@ -5,3 +5,4 @@ export * from './semester.repository';
 export * from './student-expense.repository';
 export * from './student-scholar.repository';
 export * from './student.repository';
+export * from './school-student.repository';

@@ -1,7 +1,8 @@
 {
   "ids": {
     "Todo": 5,
-    "Student": 3
+    "Student": 3,
+    "SchoolStudent": 2
   },
   "models": {
     "Todo": {
@@ -13,6 +14,9 @@
     "Student": {
       "1": "{\"name\":\"jun\",\"studentCode\":\"2015112391\",\"wechatToken\":\"kro342rj432jtr3r3r\",\"studentId\":1}",
       "2": "{\"name\":\"keyne\",\"studentCode\":\"2015112331\",\"wechatToken\":\"kro342rj432jtr3r3r\",\"studentId\":2}"
+    },
+    "SchoolStudent": {
+      "1": "{\"studentCode\":\"1234\",\"password\":\"1234\",\"schoolStudentId\":1}"
     }
   }
 }
