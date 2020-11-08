@@ -12,10 +12,28 @@ export class Student extends Entity {
     @property()
     name?: string;
 
-    @property()
+    @property({
+        type: 'string',
+        required: true,
+    })
+    password: string;
+
+    @property({
+        type: 'string',
+        required: true,
+    })
+    major: string;
+
+    @property({
+        type: 'string',
+        required: true,
+    })
     studentCode?: string;
 
-    @property()
+    @property({
+        type: 'string',
+        required: true,
+    })
     wechatToken?: string;
 
     constructor(data?: Partial<Student>) {

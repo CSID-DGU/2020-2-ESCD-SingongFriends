@@ -16,7 +16,7 @@ import {
   del,
   requestBody, RestBindings,
 } from '@loopback/rest';
-import {SchoolStudent} from '../models';
+import {SchoolStudent, Student} from '../models';
 import {SchoolStudentRepository} from '../repositories';
 import { Response } from '@loopback/rest';
 import {inject} from "@loopback/testlab";
@@ -171,35 +171,5 @@ export class SchoolStudentController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.schoolStudentRepository.deleteById(id);
-  }
-
-  @post('/login', {
-    responses: {
-      '200': {
-        description: 'SchoolStudent model instance',
-        content: {'application/json': {schema: getModelSchemaRef(SchoolStudent)}},
-      },
-    },
-  })
-  async login(
-      @requestBody({
-        content: {
-          'application/json': {
-            schema: getModelSchemaRef(SchoolStudent, {
-              title: 'NewSchoolStudent',
-              exclude: ['schoolStudentId'],
-            }),
-          },
-        },
-      })
-          schoolStudent: Omit<SchoolStudent, 'schoolStudentId'>,
-  ): Promise<Boolean> {
-    const dbSchoolStudent: any = await this.schoolStudentRepository.find({ where: { studentCode: schoolStudent.studentCode }});
-    console.log('dbSchoolStudent = ', dbSchoolStudent);
-    console.log('schoolStudent = ', schoolStudent);
-    if (dbSchoolStudent[0].password != schoolStudent.password) {
-      return false
-    }
-    return true
   }
 }
