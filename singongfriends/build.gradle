@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.2.5.RELEASE'
+        springBootVersion = '2.3.5.RELEASE'
         querydslPluginVersion = '1.0.10'
     }
     repositories {
@@ -15,14 +15,14 @@ buildscript {
 }
 
 plugins {
-    id 'org.springframework.boot' version '2.3.5.RELEASE'
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
 }
 
 apply plugin: "com.ewerk.gradle.plugins.querydsl"
 
-group = 'com.example'
+group = 'com.singong'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -49,7 +49,10 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-    testImplementation 'io.projectreactor:reactor-test'
+    testCompile('org.springframework.security:spring-security-test')
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
     compile("com.querydsl:querydsl-jpa") // querydsl
     compile("com.querydsl:querydsl-apt") // querydsl
 }

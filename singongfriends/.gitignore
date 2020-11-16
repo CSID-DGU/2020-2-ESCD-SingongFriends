@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+spring-boot-log*
+docker/mysql_secret
