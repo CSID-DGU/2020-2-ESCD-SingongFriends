@@ -11,7 +11,7 @@ public class ExpenseDTO {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Create {
+    public static class ExpenseCreate {
         private int amountMoney;
     }
 

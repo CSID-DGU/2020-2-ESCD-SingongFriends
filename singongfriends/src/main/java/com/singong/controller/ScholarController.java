@@ -20,8 +20,8 @@ public class ScholarController {
     private final ScholarRepository scholarRepository;
 
     @PostMapping("/scholars")
-    public ResponseEntity<Boolean> addScholars(@RequestBody List<ScholarDTO.Create> scholars) {
-        for (ScholarDTO.Create scholar: scholars) {
+    public ResponseEntity<Boolean> addScholars(@RequestBody List<ScholarDTO.ScholarCreate> scholars) {
+        for (ScholarDTO.ScholarCreate scholar: scholars) {
             scholarRepository.save(new Scholar(scholar.getFund(), scholar.getMoney()));
         }
         return new ResponseEntity<>(HttpStatus.OK);

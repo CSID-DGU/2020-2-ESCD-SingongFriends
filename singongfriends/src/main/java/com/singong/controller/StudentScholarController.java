@@ -30,8 +30,8 @@ public class StudentScholarController {
     private final StudentScholarRepository studentScholarRepository;
 
     @PostMapping("/student-scholars")
-    public ResponseEntity<Boolean> addStudentScholars(@RequestBody List<StudentScholarDTO.Create> newStudentScholars) {
-        for (StudentScholarDTO.Create studentScholar : newStudentScholars) {
+    public ResponseEntity<Boolean> addStudentScholars(@RequestBody List<StudentScholarDTO.StudentScholarCreate> newStudentScholars) {
+        for (StudentScholarDTO.StudentScholarCreate studentScholar : newStudentScholars) {
             Student student = em.getReference(Student.class, studentScholar.getStudentId());
             Scholar scholar = em.getReference(Scholar.class, studentScholar.getScholarId());
             Semester semester = em.getReference(Semester.class, studentScholar.getSemester());
@@ -41,12 +41,12 @@ public class StudentScholarController {
     }
 
     @GetMapping("/student-scholars/{studentId}")
-    public ResponseEntity<List<StudentScholarDTO.Get>> getAllStudentScholarOfStudent(@PathVariable("studentId") int studentId) {
+    public ResponseEntity<List<StudentScholarDTO.StudentScholarGet>> getAllStudentScholarOfStudent(@PathVariable("studentId") int studentId) {
         List<StudentScholar> studentScholars = studentScholarRepository.findByStudentId(studentId);
-        List<StudentScholarDTO.Get> result = new ArrayList<>();
+        List<StudentScholarDTO.StudentScholarGet> result = new ArrayList<>();
         for (StudentScholar studentScholar : studentScholars) {
             result.add(
-                    new StudentScholarDTO.Get(
+                    new StudentScholarDTO.StudentScholarGet(
                             studentScholar.getStudentScholarId(),
                             studentScholar.getScholar().getFund(),
                             studentScholar.getSemester().getSemesterId(),
@@ -54,6 +54,6 @@ public class StudentScholarController {
                             studentScholar.getScholar().getScholarId(),
                             studentScholar.getScholar().getMoney()));
         }
-        return new ResponseEntity<List<StudentScholarDTO.Get>>(result, HttpStatus.OK);
+        return new ResponseEntity<List<StudentScholarDTO.StudentScholarGet>>(result, HttpStatus.OK);
     }
 }

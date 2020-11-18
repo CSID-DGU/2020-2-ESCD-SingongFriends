@@ -29,9 +29,9 @@ public class StudentExpenseController {
     private final StudentExpenseRepository studentExpenseRepository;
 
     @GetMapping("/student-expenses")
-    public ResponseEntity<List<StudentExpenseDTO.Get>> getAllStudentExpenses() {
+    public ResponseEntity<List<StudentExpenseDTO.StudentExpenseGet>> getAllStudentExpenses() {
          List<StudentExpense> result = studentExpenseRepository.findAll();
-         List<StudentExpenseDTO.Get> response = new ArrayList<>();
+         List<StudentExpenseDTO.StudentExpenseGet> response = new ArrayList<>();
          for (StudentExpense se : result) {
 
          }
@@ -39,9 +39,9 @@ public class StudentExpenseController {
     }
 
     @PostMapping("/student-expenses")
-    public ResponseEntity<Object> addStudentExpenses(@RequestBody List<StudentExpenseDTO.Create> newStudentExpenses) {
+    public ResponseEntity<Object> addStudentExpenses(@RequestBody List<StudentExpenseDTO.StudentExpenseCreate> newStudentExpenses) {
         final List<StudentExpense> studentExpenses = new ArrayList<>();
-        for (StudentExpenseDTO.Create studentExpenseDTO : newStudentExpenses) {
+        for (StudentExpenseDTO.StudentExpenseCreate studentExpenseDTO : newStudentExpenses) {
             Student student = em.getReference(Student.class, studentExpenseDTO.getStudentId());
             Semester semester = em.getReference(Semester.class, studentExpenseDTO.getSemester());
             Expense expense = em.getReference(Expense.class, studentExpenseDTO.getExpenseId());

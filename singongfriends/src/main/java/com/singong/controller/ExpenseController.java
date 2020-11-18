@@ -20,8 +20,8 @@ public class ExpenseController {
     private final ExpenseRepository expenseRepository;
 
     @PostMapping("/expenses")
-    public ResponseEntity<Boolean> addExpenses(@RequestBody List<ExpenseDTO.Create> expenses) {
-        for (ExpenseDTO.Create expense : expenses) {
+    public ResponseEntity<Boolean> addExpenses(@RequestBody List<ExpenseDTO.ExpenseCreate> expenses) {
+        for (ExpenseDTO.ExpenseCreate expense : expenses) {
             expenseRepository.save(new Expense(expense.getAmountMoney()));
         }
         return new ResponseEntity<>(true, HttpStatus.OK);

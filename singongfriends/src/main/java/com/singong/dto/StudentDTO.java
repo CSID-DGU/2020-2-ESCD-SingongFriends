@@ -18,7 +18,7 @@ public class StudentDTO {
 
     @Getter @Setter
     @NoArgsConstructor @AllArgsConstructor
-    public static class Create {
+    public static class StudentCreate {
         private String studentCode;
         private String password;
         private String major;
@@ -28,15 +28,15 @@ public class StudentDTO {
 
     @Getter @Setter
     @NoArgsConstructor @AllArgsConstructor
-    public static class Get {
+    public static class StudentGet {
         private int studentId;
         private String studentCode;
         private String major;
         private String name;
         private String wechatToken;
 
-        public static StudentDTO.Get fromStudent(Student student) {
-            return new StudentDTO.Get(
+        public static StudentDTO.StudentGet fromStudent(Student student) {
+            return new StudentDTO.StudentGet(
                     student.getStudentId(), student.getStudentCode(),
                     student.getMajor(), student.getName(), student.getWechatToken());
         }

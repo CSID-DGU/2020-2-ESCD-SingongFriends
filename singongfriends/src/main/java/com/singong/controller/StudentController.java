@@ -46,8 +46,8 @@ public class StudentController {
     }
 
     @PostMapping("/students")
-    public ResponseEntity<Boolean> addStudents(@RequestBody List<StudentDTO.Create> newStudents) {
-        for (StudentDTO.Create student : newStudents) {
+    public ResponseEntity<Boolean> addStudents(@RequestBody List<StudentDTO.StudentCreate> newStudents) {
+        for (StudentDTO.StudentCreate student : newStudents) {
             studentRepository.save(
                     new Student(student.getName(), student.getPassword(), student.getMajor(),student.getStudentCode()));
         }
@@ -55,7 +55,7 @@ public class StudentController {
     }
 
     @GetMapping("/students/student/{studentId}/student-expenses/semester/{semester}")
-    public ResponseEntity<StudentExpenseDTO.Get> getAllStudentExpenseByStudentId(
+    public ResponseEntity<StudentExpenseDTO.StudentExpenseGet> getAllStudentExpenseByStudentId(
             @PathVariable("studentId") int studentId, @PathVariable("semester") int semester) {
         return new ResponseEntity<>(
                 studentService.getStudentExpenseByStudentIdAndSemester(studentId, semester),
@@ -63,22 +63,22 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    public ResponseEntity<List<StudentDTO.Get>> getAllStudents() {
+    public ResponseEntity<List<StudentDTO.StudentGet>> getAllStudents() {
         List<Student> result = studentRepository.findAll();
-        List<StudentDTO.Get> students = new ArrayList<>();
+        List<StudentDTO.StudentGet> students = new ArrayList<>();
         result.parallelStream()
-                .map(StudentDTO.Get::fromStudent)
+                .map(StudentDTO.StudentGet::fromStudent)
                 .forEach(students::add);
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
     @GetMapping("/students/student/token/{wechatToken}")
-    public ResponseEntity<StudentDTO.Get> getAllStudents(@PathVariable("wechatToken") String wechatToken) {
+    public ResponseEntity<StudentDTO.StudentGet> getAllStudents(@PathVariable("wechatToken") String wechatToken) {
         List<Student> students = studentRepository.findByWechatToken(wechatToken);
         if (students == null || students.size() == 0) {
             return new ResponseEntity("해당 토큰을 가진 유저가 없습니다", HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(StudentDTO.Get.fromStudent(students.get(0)), HttpStatus.OK);
+            return new ResponseEntity<>(StudentDTO.StudentGet.fromStudent(students.get(0)), HttpStatus.OK);
         }
     }
 

@@ -11,7 +11,7 @@ public class StudentExpenseDTO {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Get {
+    public static class StudentExpenseGet {
         private int studentExpenseId;
         private int amountBeforeReduction;
         private int reductionAmount;
@@ -22,7 +22,7 @@ public class StudentExpenseDTO {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Create {
+    public static class StudentExpenseCreate {
         private int studentId;
         private int expenseId;
         private int semester;

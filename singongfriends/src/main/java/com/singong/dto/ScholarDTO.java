@@ -11,7 +11,7 @@ public class ScholarDTO {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Create {
+    public static class ScholarCreate {
         private String fund;
         private int money;
     }

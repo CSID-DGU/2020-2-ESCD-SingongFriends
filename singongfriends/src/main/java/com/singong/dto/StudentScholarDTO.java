@@ -11,7 +11,7 @@ public class StudentScholarDTO {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Get {
+    public static class StudentScholarGet {
         private int studentScholarId;
         private String fund;
         private int semester;
@@ -24,7 +24,7 @@ public class StudentScholarDTO {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class Create {
+    public static class StudentScholarCreate {
         private int semester;
         private int studentId;
         private int scholarId;
