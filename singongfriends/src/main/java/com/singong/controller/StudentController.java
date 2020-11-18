@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -62,18 +63,22 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    public ResponseEntity<List<Student>> getAllStudents() {
+    public ResponseEntity<List<StudentDTO.Get>> getAllStudents() {
         List<Student> result = studentRepository.findAll();
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        List<StudentDTO.Get> students = new ArrayList<>();
+        result.parallelStream()
+                .map(StudentDTO.Get::fromStudent)
+                .forEach(students::add);
+        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
     @GetMapping("/students/student/token/{wechatToken}")
-    public ResponseEntity<List<Student>> getAllStudents(@PathVariable("wechatToken") String wechatToken) {
+    public ResponseEntity<StudentDTO.Get> getAllStudents(@PathVariable("wechatToken") String wechatToken) {
         List<Student> students = studentRepository.findByWechatToken(wechatToken);
         if (students == null || students.size() == 0) {
             return new ResponseEntity("해당 토큰을 가진 유저가 없습니다", HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(students, HttpStatus.OK);
+            return new ResponseEntity<>(StudentDTO.Get.fromStudent(students.get(0)), HttpStatus.OK);
         }
     }
 
