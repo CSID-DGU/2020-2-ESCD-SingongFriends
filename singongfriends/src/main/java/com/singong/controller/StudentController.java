@@ -55,7 +55,7 @@ public class StudentController {
     }
 
     @GetMapping("/students/student/{studentId}/student-expenses/semester/{semester}")
-    public ResponseEntity<StudentExpenseDTO.StudentExpenseGet> getAllStudentExpenseByStudentId(
+    public ResponseEntity<StudentExpenseDTO.StudentExpenseCalculatedGet> getAllStudentExpenseByStudentId(
             @PathVariable("studentId") int studentId, @PathVariable("semester") int semester) {
         return new ResponseEntity<>(
                 studentService.getStudentExpenseByStudentIdAndSemester(studentId, semester),

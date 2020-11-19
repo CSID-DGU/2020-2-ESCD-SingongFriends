@@ -6,6 +6,7 @@ import com.singong.model.Semester;
 import com.singong.model.Student;
 import com.singong.model.StudentExpense;
 import com.singong.repository.studentExpense.StudentExpenseRepository;
+import com.singong.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,15 +28,19 @@ public class StudentExpenseController {
     private final EntityManager em;
 
     private final StudentExpenseRepository studentExpenseRepository;
+    private final StudentService studentService;
 
     @GetMapping("/student-expenses")
-    public ResponseEntity<List<StudentExpenseDTO.StudentExpenseGet>> getAllStudentExpenses() {
+    public ResponseEntity<List<StudentExpenseDTO.StudentExpenseCalculatedGet>> getAllStudentExpenses() {
          List<StudentExpense> result = studentExpenseRepository.findAll();
-         List<StudentExpenseDTO.StudentExpenseGet> response = new ArrayList<>();
-         for (StudentExpense se : result) {
+         List<StudentExpenseDTO.StudentExpenseCalculatedGet> response = new ArrayList<>();
 
-         }
-         return null;
+         result.parallelStream()
+                 .map(x ->
+                         studentService.getStudentExpenseByStudentIdAndSemester(
+                                 x.getStudentExpenseId(), x.getSemester().getSemesterId()))
+                .forEach(response::add);
+         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/student-expenses")

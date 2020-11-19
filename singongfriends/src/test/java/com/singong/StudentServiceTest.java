@@ -50,7 +50,7 @@ public class StudentServiceTest {
                         new StudentScholar(student, new Scholar("C재단", 300000), semester)));
         given(studentScholarRepository.findByStudentIdAndSemester(studentId, intSemester))
                 .willReturn(studentScholars);
-        StudentExpenseDTO.Get result =
+        StudentExpenseDTO.StudentExpenseCalculatedGet result =
         studentService.getStudentExpenseByStudentIdAndSemester(studentId, intSemester);
         assertThat(result.getAmountBeforeReduction(), is(originalExpenseMoney));
         assertThat(result.getReductionAmount(), is(600000));

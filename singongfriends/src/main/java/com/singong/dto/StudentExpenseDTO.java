@@ -1,5 +1,7 @@
 package com.singong.dto;
 
+import com.singong.model.Student;
+import com.singong.model.StudentExpense;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,10 +15,22 @@ public class StudentExpenseDTO {
     @AllArgsConstructor
     public static class StudentExpenseGet {
         private int studentExpenseId;
+        private int studentId;
+        private int expenseId;
+        private int amountAfterReduction;
+    }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class StudentExpenseCalculatedGet {
+        private int studentExpenseId;
         private int amountBeforeReduction;
         private int reductionAmount;
         private int amountAfterReduction;
     }
+
 
     @Getter
     @Setter

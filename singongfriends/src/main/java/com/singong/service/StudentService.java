@@ -21,7 +21,7 @@ public class StudentService {
     private final StudentExpenseRepository studentExpenseRepository;
     private final StudentScholarRepository studentScholarRepository;
 
-    public StudentExpenseDTO.StudentExpenseGet getStudentExpenseByStudentIdAndSemester(int studentId, int semester) {
+    public StudentExpenseDTO.StudentExpenseCalculatedGet getStudentExpenseByStudentIdAndSemester(int studentId, int semester) {
         StudentExpense studentExpense = studentExpenseRepository.findByStudentIdAndSemester(studentId, semester);
         if (studentExpense == null) {
             return null;
@@ -35,7 +35,7 @@ public class StudentService {
             amountAfterReduction -= reduction;
             amountReduction += reduction;
         }
-        return new StudentExpenseDTO.StudentExpenseGet(
+        return new StudentExpenseDTO.StudentExpenseCalculatedGet(
                 studentExpense.getStudentExpenseId(), amountBeforeReduction,
                 amountReduction, amountAfterReduction);
     }
