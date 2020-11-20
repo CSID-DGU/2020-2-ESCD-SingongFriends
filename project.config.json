@@ -54,11 +54,11 @@
       "current": -1,
       "list": []
     },
-    "game": {
+    "plugin": {
       "current": -1,
       "list": []
     },
-    "plugin": {
+    "game": {
       "current": -1,
       "list": []
     },
@@ -68,7 +68,57 @@
     },
     "miniprogram": {
       "current": -1,
-      "list": []
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/staris/page1/page1",
+          "pathName": "pages/staris/page1/page1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/staris/page2/page2",
+          "pathName": "pages/staris/page2/page2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/staris/page3/page3",
+          "pathName": "pages/staris/page3/page3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/KKW/Curriculum/Curriculum",
+          "pathName": "pages/KKW/Curriculum/Curriculum",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/KKW/BasicComponents/BasicComponents",
+          "pathName": "pages/KKW/BasicComponents/BasicComponents",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/KKW/index/index",
+          "pathName": "pages/KKW/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "pages/KHJ/history/index",
+          "pathName": "pages/KHJ/history/index",
+          "query": "",
+          "scene": null
+        }
+      ]
     }
   }
 }

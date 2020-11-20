@@ -35,8 +35,8 @@ Page({
       //  console.log(res.data[0].studentId)
        that.setData({ 
         // students: res.data,
-        doneCourses: this.doneCourses=res.data.done,
-        undoneCourses: this.undoneCourses=res.data.undone
+        doneCourses: that.doneCourses=res.data.done,
+        undoneCourses: that.undoneCourses=res.data.undone
       })
       },
       fail: function(){  },
