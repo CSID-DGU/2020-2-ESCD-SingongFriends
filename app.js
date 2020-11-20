@@ -1,9 +1,11 @@
 //app.js
 App({
 
+
   globalData:{userInfo:null,
   host:"http://localhost:8052/",
 sesid:null},
+
 
   onLaunch: function () {
     // 展示本地存储能力
@@ -41,5 +43,4 @@ sesid:null},
   globalData: {
     userInfo: null
   }
-
 })

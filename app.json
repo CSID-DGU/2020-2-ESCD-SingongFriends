@@ -10,8 +10,12 @@
     "pages/NJM/Login/Login",
     "pages/NJM/Menu/Menu",
     "pages/NJM/Register/Register",
-    "pages/NJM/Payment/Payment"
+    "pages/NJM/Payment/Payment",
 
+    "pages/KHJ/index/index",
+    "pages/KHJ/register/index",
+    "pages/KHJ/history/index",
+    "pages/KHJ/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

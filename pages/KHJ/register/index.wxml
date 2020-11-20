@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top-hor-bar"></view>
+
+  <view class="content-container">
+    <label>신청할 수 있는 장학금</label>  
+    <view style="border:1px solid;width:200px;height:30px;margin-bottom:36px"></view>
+
+    <label>첨부파일</label>  
+    <view style="border:1px solid;width:200px;height:30px"></view>
+    
+  </view>
+  <button style="width:70px;height:25px;font-size:9px;margin-left:16px">제출</button>
+
+</view>
