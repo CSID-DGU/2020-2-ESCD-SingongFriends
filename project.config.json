@@ -1,24 +1,26 @@
 {
-  "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": "cloudfunctions/",
+  "description": "Project configuration file",
+  "packOptions": {
+    "ignore": []
+  },
   "setting": {
     "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
-    "preloadBackgroundData": true,
+    "preloadBackgroundData": false,
     "minified": true,
     "newFeature": true,
     "coverView": true,
-    "nodeModules": true,
-    "autoAudits": true,
+    "nodeModules": false,
+    "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
-    "uglifyFileName": true,
+    "uglifyFileName": false,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": true,
+    "compileHotReLoad": false,
     "useMultiFrameRuntime": false,
     "useApiHook": true,
     "babelSetting": {
@@ -29,17 +31,21 @@
     "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": true,
-    "packNpmManually": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "appid": "wx5be09fc9ea2bb7af",
-  "projectname": "miniprogram-1",
-  "libVersion": "2.12.1",
+  "compileType": "miniprogram",
+  "libVersion": "2.13.0",
+  "appid": "wx438bca56202f3981",
+  "projectname": "miniprogram-test-1",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "compileType": "miniprogram",
   "condition": {
     "search": {
       "list": []
@@ -47,20 +53,12 @@
     "conversation": {
       "list": []
     },
-    "plugin": {
-      "list": []
-    },
     "game": {
+      "currentL": -1,
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide"
-        }
-      ]
+      "list": []
     }
   }
 }
