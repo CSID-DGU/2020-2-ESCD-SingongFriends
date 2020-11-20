@@ -1,0 +1,30 @@
+.Logo {
+  object-fit: contain;
+  width: 80%;
+}
+
+#logo_image {
+  width: 100%;
+  margin: 70px 0px 70px 0;
+  max-height: 150px;
+}
+
+.Input {
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+#input {
+  background-color: #F8F8F8;
+  margin: 10px;
+  width: 92%;
+}
+
+.Button {
+  width: 80%;
+}
+
+#login_button {
+  background-color: #F4B183;
+  width: 100%;
+}

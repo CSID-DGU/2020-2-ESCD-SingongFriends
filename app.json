@@ -6,7 +6,12 @@
     "pages/staris/curlist/curlist",
     "pages/staris/index/index",
     "pages/staris/page2/page2",
-    "pages/staris/myinfo/myinfo"
+    "pages/staris/myinfo/myinfo",
+    "pages/NJM/Login/Login",
+    "pages/NJM/Menu/Menu",
+    "pages/NJM/Register/Register",
+    "pages/NJM/Payment/Payment"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,6 +19,7 @@
     "navigationBarTitleText": "신공프렌즈",
     "navigationBarTextStyle": "black"
   },
+
   "tabBar": {
     "list": [
       {
@@ -26,5 +32,6 @@
       }
     ]
   },
+  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

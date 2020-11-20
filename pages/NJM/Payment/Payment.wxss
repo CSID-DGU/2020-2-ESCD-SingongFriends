@@ -1,0 +1,106 @@
+.Bill {
+  margin: 40px 0 10px 0;
+  width: 80%;
+  padding: 12px 0 12px 0;
+  text-align: center;
+  background-color: #F4B183;
+  border-radius: 0.1cm;
+  color: white;
+  border: 1px solid black;
+}
+
+#bill {
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.Instructions {
+  width: 80%;
+}
+
+#instructions {
+  margin: 10px 0 10px 0;
+  padding: 10px 0 10px 0px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 0.1cm;
+  width: 100%;
+  height: auto;
+}
+
+#inform {
+  font-size: small;
+}
+
+.Fees {
+  width: 80%;
+  margin: 10px 0 10px 0;
+}
+
+ /* table header */
+.table_header{
+  display: flex;
+  justify-content: space-between; /* The item is located in a container with blank spaces between the rows. */
+  background-color: #BFBFBF;
+  width: 100%;
+  font-size: x-small;
+  text-align: center;
+} 
+
+.th{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border: 1px solid black;
+  width: 50%;
+}
+
+ /* table cell */
+.table_cell{
+  display: flex;
+  justify-content: space-between; /* The item is located in a container with blank spaces between the rows. */
+  width: 100%;
+  font-size: x-small;
+  text-align: center;
+}
+
+.td{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  border: 1px solid black;
+  width: 50%;
+}
+
+.td1 {
+  background-color: #E6E5E3;
+}
+
+.top-left {
+  border-top-left-radius: 0.1cm;
+}
+
+.top-right {
+  border-top-right-radius: 0.1cm;
+}
+
+.bottom-left {
+  border-bottom-left-radius: 0.1cm;
+}
+
+.bottom-right {
+  border-bottom-right-radius: 0.1cm;
+}
+
+.Payment {
+  width: 80%;
+}
+
+#payment {
+  margin: 10px 0 10px 0;
+  background-color: #BFBFBF;
+  width: 100%;
+}

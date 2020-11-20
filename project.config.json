@@ -4,13 +4,13 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": true,
+    "newFeature": false,
     "coverView": true,
     "nodeModules": false,
     "autoAudits": false,
@@ -35,17 +35,14 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
+  "libVersion": "2.14.0",
   "appid": "wx5be09fc9ea2bb7af",
-  "projectname": "prac1",
-  "cloudfunctionTemplateRoot": "",
-  "watchOptions": {
-    "ignore": []
-  },
+  "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
   },
   "scripts": {},
+  "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
@@ -57,11 +54,12 @@
       "current": -1,
       "list": []
     },
-    "plugin": {
+    "game": {
       "current": -1,
       "list": []
     },
-    "game": {
+    "plugin": {
+      "current": -1,
       "list": []
     },
     "gamePlugin": {
@@ -70,35 +68,7 @@
     },
     "miniprogram": {
       "current": -1,
-      "list": [
-        {
-          "id": -1,
-          "name": "pages/page3/page3",
-          "pathName": "pages/page3/page3",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/staris/page2/page2",
-          "pathName": "pages/staris/page2/page2",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/staris/page3/page3",
-          "pathName": "pages/staris/page3/page3",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/staris/syntax",
-          "pathName": "pages/staris/syntax/syntax",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }
