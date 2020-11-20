@@ -29,8 +29,7 @@
 <view class="container">
 
   <view class="ctrtext">
-  <text> {{item.f}}원 </text>
-  <text> {{item.l}} </text>
-  <!-- <text id="state"> {{item.key2}} </text> -->
+  <text> {{item.amountMoney}}원  {{item.expenseId}}학기 </text>
+  <text id="state">{{item.state}}</text>
 </view></view>
 </block> 

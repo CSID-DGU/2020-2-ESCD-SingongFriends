@@ -32,6 +32,7 @@ go:function(options){
     //http://119.28.235.170/students
       var that=this
       wx.request({
+        //http://119.28.235.170/student-expenses ///get?post???
        url:'http://staris.freehongs.net/web/androidtest.do',
         method: 'GET',
         data:{
@@ -46,7 +47,7 @@ go:function(options){
           console.log(res.data.sendData[0].f)
          // console.log(res.data[0].studentId);
          that.setData({
-           obj:{key1:res.data.sendData[0].f,key2:res.data.sendData[0].l,key3:'?'}
+           obj:{key1:res.data.sendData[0].tuition,key2:res.data.sendData[0].semester,key3:res.data.sendData[0].date}
            //obj:{key1:res.data[0].student~~~~}
          })
         },
