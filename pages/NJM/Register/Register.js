@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  goToPayment: function() {
+    wx.navigateTo({
+      url: '../Payment/Payment',
+    })
   }
 })

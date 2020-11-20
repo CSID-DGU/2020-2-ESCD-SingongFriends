@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="Bill">
+    <text id="bill">고지서</text>
+  </view>
+  <view class="Instructions">
+    <textarea disabled="true" id="instructions">
+      <view id="inform">※ 등록금 납부기간 : 2020-12-01 ~ 2020-12-31</view>
+      <view id="inform">납부시간 : 09:00 ~ 21:00(단, 마감일은 17:00 종료)</view>
+      <view id="inform">※ 유의사항</view>
+      <view id="inform">* 선택납부경비 납부방법</view>
+      <view id="inform">① 납부 희망시 등록금에 합산하여 입금</view>
+      <view id="inform">- 등록금 입금 후 추가 입금 가능(등록금 입금 당일만)</view>
+      <view id="inform">② 일부 항목만 선택적으로 입금 가능(금액 자동 인식)</view>
+      <view id="inform">납부예시)</view>
+      <view id="inform">ⓐ 등록금</view>
+      <view id="inform">ⓑ 등록금 + 학생회비</view>
+      <view id="inform">ⓒ 등록금 + 동창회비</view>
+      <view id="inform">ⓓ 등록금 + 학생회비 + 동창회비</view>
+      <view id="inform">③ 단, 신용카드는 일부 항목만 선택적 납부 불가</view>
+      <view id="inform">납부예시) 등록금 or 등록금 + 선택납부경비 전체</view>
+      <view id="inform">* 보내는 사람(송금인) 명의는 학생본인이 아니어도 됨</view>
+      <view id="inform">* 등록금 전액면제 장학생 등록방법</view>
+      <view id="inform">① 가상계좌로 선택납부경비 입금</view>
+      <view id="inform">② 유드림스 전액장학생 등록신청</view>
+    </textarea>
+  </view>
+  <view class="Fees">
+    <view class="table_header">
+      <view class="th th1 top-left">구분</view>
+      <view class="th th2">책정금액</view>
+      <view class="th th3">감면금액</view>
+      <view class="th th4 top-right">고지금액</view>
+    </view>
+    <view class="table_cell">
+      <view class="td td1">입학금</view>
+      <view class="td td2">0</view>
+      <view class="td td3">0</view>
+      <view class="td td4">0</view>
+    </view>
+    <view class="table_cell">
+      <view class="td td1">수업료</view>
+      <view class="td td2">4,580,000</view>
+      <view class="td td3">1,603,000</view>
+      <view class="td td4">2,977,000</view>
+    </view>
+    <view class="table_cell">
+      <view class="td td1 bottom-left">등록금계</view>
+      <view class="td td2">4,580,000</view>
+      <view class="td td3">1,603,000</view>
+      <view class="td td4 bottom-right">2,977,000</view>
+    </view>
+  </view>
+  <view class="Payment">
+    <button id="payment" bindtap="goToWechatPay" style="color:#fff">납부하기</button>
+  </view>
+</view>

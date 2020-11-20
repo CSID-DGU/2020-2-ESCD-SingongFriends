@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/Login/Login",
-    "pages/Menu/Menu",
-    "pages/Register/Register"
+    "pages/NJM/Login/Login",
+    "pages/NJM/Menu/Menu",
+    "pages/NJM/Register/Register",
+    "pages/NJM/Payment/Payment"
   ],
   "window": {
     "backgroundTextStyle": "light",

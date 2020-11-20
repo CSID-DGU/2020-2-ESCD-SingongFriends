@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  goToRegister: function() {
+    wx.navigateTo({
+      url: '../Register/Register',
+    })
   }
 })
