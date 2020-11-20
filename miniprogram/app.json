@@ -1,26 +1,27 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/KKW/Curriculum/Curriculum",
+    "pages/KKW/BasicComponents/BasicComponents",
+    "pages/KKW/index/index",
+    "pages/KKW/test/test"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarBackgroundColor": "#F3721C",
+    "navigationBarTitleText": "신공프렌즈",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/KKW/BasicComponents/BasicComponents",
+        "text": "학과소개"
+      },
+      {
+        "pagePath": "pages/KKW/Curriculum/Curriculum",
+        "text": "커리큘럼"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
