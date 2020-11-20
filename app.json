@@ -15,7 +15,11 @@
     "pages/KHJ/index/index",
     "pages/KHJ/register/index",
     "pages/KHJ/history/index",
-    "pages/KHJ/logs/logs"
+    "pages/KHJ/logs/logs",
+    "pages/KKW/Curriculum/Curriculum",
+    "pages/KKW/BasicComponents/BasicComponents",
+    "pages/KKW/index/index",
+    "pages/KKW/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

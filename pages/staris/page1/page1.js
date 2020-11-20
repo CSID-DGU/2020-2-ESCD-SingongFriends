@@ -44,10 +44,13 @@ Page({
     // var thi=this;
     // var ab=3;
     // var a=this.data.a;
+    //wx5be09fc9ea2bb7af
+    const accountInfo = wx.getAccountInfoSync();
+    console.log(accountInfo) // 小程序 appId
 
     wx.login({
       success (res) {
-        console.log(res.code)
+       // console.log(res.code)
       }
     })
     //052M8a000HQ6GK1Laf100aPXOU0M8a0D
@@ -68,9 +71,9 @@ Page({
          // wechatToken: "helloworld"
        },
        success: function (res) {
-         console.log(JSON.stringify(res.data))
+       //  console.log(JSON.stringify(res.data))
        // that.setData({curlist:res.data.sendData})
-         console.log(res.data[0].studentId);
+        // console.log(res.data[0].studentId);
          //console.log(res.data.sendData[0].tuition)
         // console.log(res.data[0].studentId);
         that.setData({
