@@ -1,0 +1,58 @@
+<!--pages/BasicComponents/BasicComponents.wxml-->
+<!-- <view class='section-title'>
+  <text>Button</text>
+</view>
+
+<view class="section">
+  <view class="item-title">Button Type</view>
+  <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}"> default </button>
+  <button type="primary" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}"> primary </button>
+  <button type="warn" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}"> warn </button>
+</view>
+
+<view class="section">
+  <view class="item-title">Change Property</view>
+  <button bindtap="setSize">Size {{btnSize}}</button>
+  <button bindtap="setDisabled">Disabled {{disabled}}</button>
+  <button bindtap="setPlain">Plain {{plain}}</button>
+  <button bindtap="setLoading">loading {{loading}}</button>
+</view>
+ 
+ <!-- Image -->
+<!-- <view class="section-title">
+  <text>Image</text>
+</view>  -->
+
+<view class='section'>
+  <view class='item-title'> Mybuttons </view>
+
+  <button bindtap='department_Info'>학위 소개</button>
+  <view class="section">
+    <view wx:if="{{imgVisible3=='true'}}">
+      <block wx:for="{{lengtharr}}">
+        <view class="flex justify-center">
+          <view class="basis-40per bg-whitesmoke padding-sm degreeStyle">{{arr1[index]}}</view>
+          <view class="basis-40per bg-whitesmoke padding-sm degreeStyle">{{arr2[index]}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+  <button bindtap='image2_show'>학과 소개</button>
+  <view class="section">
+    <view wx:if="{{imgVisible2=='true'}}">
+      Other data...
+    </view>
+  </view>
+
+  <button bindtap='image1_show'>이수체계도</button>
+  <view class="section">
+    <view wx:if="{{imgVisible=='true'}}">
+      <image src="{{imageUrl_w}}"></image>
+    </view>
+  </view>
+</view>

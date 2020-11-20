@@ -1,0 +1,25 @@
+.mystyle{
+  color : red;
+  font-size:20px;
+
+}
+page {
+  padding-top: 540rpx;/* 400rpx + 140rpx */
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1024;
+}
+
+.bg-img-style {
+  background-image: url(http://tong.visitkorea.or.kr/cms/resource/72/1536672_image2_1.jpg);
+  height: 400rpx;
+}
+
+.margin-tl {
+  margin-top: 200rpx;
+  margin-left: 50rpx;
+}

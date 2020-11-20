@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top-hor-bar"></view>
+
+  <view class="content-container">
+    <view class="icon-view-container">
+      <view class="icon-wrapper">
+        <image id="icon-register-wrapper" src="../../assets/1.png"></image>
+        <label style="font-size:13px">장학금 신청하기</label>
+      </view>
+      <view class="icon-wrapper">
+        <image id="icon-history-wrapper" src="../../assets/2.png"></image>
+        <label style="font-size:13px">장학금 수혜내역</label>
+      </view>
+      
+    </view>
+  </view>
+</view>

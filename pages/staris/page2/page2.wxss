@@ -1,0 +1,36 @@
+/* pages/syntax/syntax.wxss */
+#logotxt{
+  margin-top: 50%;
+  font-size: 15px;
+  color:orange;
+}
+
+  .ctrtext{
+  margin-top: 10px;
+  text-align: center;
+  color: black;
+  border-color: cyan;
+  background-origin: padding-box; 
+  border-style: double;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ctrtext2{
+  border-color: black;
+  background-origin: padding-box; 
+  border-style: double;
+  text-align: center;
+  
+  margin-top: 10px;
+}
+.cost{
+margin-right:10%;
+}
+.semester{
+
+  text-align: right;
+}
+.state{
+  color: blue;
+  font-size: 15px;
+}

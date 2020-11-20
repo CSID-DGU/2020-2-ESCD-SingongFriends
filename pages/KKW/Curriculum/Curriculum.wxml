@@ -1,0 +1,71 @@
+<!--pages/Curriculum/Curriculum.wxml-->
+<view class ='section'>
+  <view ></view> </view>
+
+<view calss='section'>
+ <view class="flex justify-center">
+    <view class="basis-40per bg-orange flex justify-center titleFont">미수강과목</view>
+  </view>
+<view class ='section'>
+<view class="line"></view> 
+</view>
+
+  <view class="flex justify-center">
+    <scroll-view class="basis-40per V-scroll-view " scroll-y="true">
+
+    <block wx:for="{{undoneCourses}}" class="V-scroll-item ">
+
+      <view wx:if="{{index%2==0}}">
+      <view class="bg-wheat">
+        <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 
+          {{item.courseTitle}} 
+          <!-- <block wx:if="{{item.recommended==true}}">(추천)</block> -->
+        </button>
+      </view>
+    </view>
+      
+    <view wx:else>
+      <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"   disabled="{{disabled}}"> 
+          {{item.courseTitle}} 
+          <!-- <block wx:if="{{item.recommended==true}}">(추천)</block> -->
+        </button>
+    </view>
+      
+      <!-- <block wx:for="{{students}}" class="V-scroll-item">
+       
+      <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> {{item.name}}
+      </button> -->
+      
+    </block>
+    </scroll-view>
+  </view>
+</view>
+
+
+<view class='section'>
+   <view class="flex justify-center">
+    <view class="basis-40per bg-gray flex justify-center titleFont">수강과목</view>
+  </view>
+
+  <view class ='section'>
+  <view class="line"></view> 
+  </view>
+
+   <view class="flex justify-center">
+    <scroll-view class="basis-40per V-scroll-view-mini" scroll-y="true">
+    <block wx:for="{{doneCourses}}" class="V-scroll-item">
+      <view wx:if="{{index%2==0}}">
+      <view class="bg-wheat">
+      <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> {{item.courseTitle}}
+      </button>
+      </view>
+      </view>
+
+      <view wx:else>
+        <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> {{item.courseTitle}}
+          </button>
+        </view>
+    </block>
+    </scroll-view>
+  </view>
+</view>

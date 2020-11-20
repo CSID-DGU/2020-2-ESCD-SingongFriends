@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="Register">
+    <text id="register">등록</text>
+  </view>
+  <view class="Register_btn">
+    <view class="Bill" style="float: left; width: 48%; padding-right: 5px">
+      <button id="button" bindtap="goToPayment"><image src="/resource/bill.png" id="image"></image></button>
+      <text>고지서</text>
+    </view>
+    <view class="Receipt" style="float: right; width: 48%; padding-left: 5px">
+      <button id="button"><image src="/resource/receipt.png" id="image"></image></button>
+      <text>납부내역</text>
+    </view>
+  </view>
+</view>
