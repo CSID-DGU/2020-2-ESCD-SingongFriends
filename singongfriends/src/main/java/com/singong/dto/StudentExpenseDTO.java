@@ -41,4 +41,12 @@ public class StudentExpenseDTO {
         private int expenseId;
         private int semester;
     }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class StudentExpenseRemove {
+        private int studentExpenseId;
+    }
 }
