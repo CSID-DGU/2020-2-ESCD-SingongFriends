@@ -5,8 +5,8 @@
   <view> {{index}} => </view>
   <view> {{item}} </view>
 </block> -->
-
-<!-- <block wx:for="{{arobj}}">
+<!-- 
+<block wx:for="{{arobj}}">
   <view> {{index}} => </view>
   <view> {{item}} </view>
   <view> {{item.key3}} </view>
@@ -23,13 +23,21 @@
     <text class="state">({{object.key2}}) </text>
   </view>
 </block> -->
-<block wx:for="{{arobj}}">
+<!-- <view>{{result}}</view> -->
+<block wx:for="{{result}}">
   <!-- <view> {{index}} => </view>
   <view> {{item}} </view> -->
 <view class="container">
 
   <view class="ctrtext">
-  <text> {{item.amountMoney}}원  {{item.expenseId}}학기 </text>
-  <text id="state">{{item.state}}</text>
+  <text> {{item.amountBeforeReduction}}원  {{semester[index]}}학기 </text>
+  <text id="state">제출완료</text>
 </view></view>
 </block> 
+<!-- 
+<view class="container">
+
+<view class="ctrtext">
+<text> {{amountBeforeReduction}}원  {{semester}}학기 </text>
+<text id="state">{{studentExpenseId}}</text>
+</view></view> -->
