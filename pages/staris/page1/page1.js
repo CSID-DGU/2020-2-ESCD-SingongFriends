@@ -6,6 +6,7 @@ Page({
    * Page initial data
    */
   data: {
+    code:"",
     studentId:1,
     semester:[20192,20201,20202],
     forindex:[0,1,2],
@@ -91,10 +92,14 @@ Page({
     //wx5be09fc9ea2bb7af
     const accountInfo = wx.getAccountInfoSync();
   //  console.log(accountInfo) // 小程序 appId
-
+    var that=this;
     wx.login({
+      
       success (res) {
-      //  console.log(res.code)
+       console.log(res.code)
+       that.setData({
+         code:res.code
+       })
        // console.log(res)
       }
     })
@@ -126,52 +131,54 @@ console.log("늉");
   },
   //Date.now().toString()
   gopage2:function(){
-    wx.requestPayment({
-      nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
-      package: 'Prepay_id =Wx2017033010242291fcfe0db70013231072',
-       timeStamp: '1490840662',
-       signType:"MD5",
-       paySign:"test",
+    // wx.requestPayment({
+    //   nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
+    //   package: 'Prepay_id =Wx2017033010242291fcfe0db70013231072',
+    //    timeStamp: '1490840662',
+    //    signType:"MD5",
+    //    paySign:"test",
 
-      success(){},
-      fail(){}
-    })
+    //   success(){},
+    //   fail(){}
+    // })
 
 //wx5be09fc9ea2bb7af
 
-    wx.navigateTo({
-      url: '../page2/page2',
-    })
-
-    // wx.login({
-    //   timeout: 0,
+    // wx.navigateTo({
+    //   url: '../page2/page2',
     // })
 
 
-    // var url="https://api.weixin.qq.com/sns/jscode2session";
-    // url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"1"+"&jscode=code"
 
-    // wx.request({
-    //   url:url,
-    //    method: 'GET',
-    //    data:{
-    //      // name: "pay",
-    //      // studentCode: "20121313",
-    //      // wechatToken: "helloworld"
-    //    },
-    //    success: function (res) {
-    //    //  console.log(JSON.stringify(res))
-    //    // that.setData({curlist:res.data.sendData})
-    //      console.log(res);
+
+    var url="https://api.weixin.qq.com/sns/jscode2session";
+    //url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"73c38d218a25bd2399786e99dc55486a"+"&jscode=code"
+
+    wx.request({
+      url:url,
+       method: 'GET',
+       data:{
+         appid:"wx5be09fc9ea2bb7af",
+         secret:"73c38d218a25bd2399786e99dc55486a",
+         js_code: this.data.code,
+          grant_type: 'authorization_code'
+         // name: "pay",
+         // studentCode: "20121313",
+         // wechatToken: "helloworld"
+       },
+       success: function (res) {
+       //  console.log(JSON.stringify(res))
+       // that.setData({curlist:res.data.sendData})
+         console.log(res);
         
-    //     // console.log(res.data[0].studentId);
+        // console.log(res.data[0].studentId);
    
-    //    },
-    //    fail: function(){  },
-    //    complete: function(){
+       },
+       fail: function(){  },
+       complete: function(){
      
-    //    }
-    //  });
+       }
+     });
 
 
 
