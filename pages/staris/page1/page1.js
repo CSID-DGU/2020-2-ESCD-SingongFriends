@@ -42,6 +42,36 @@ Page({
   },
   
 
+  getOpenid:function(){
+    var url="https://api.weixin.qq.com/sns/jscode2session";
+    //url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"73c38d218a25bd2399786e99dc55486a"+"&jscode=code"
+    console.log("오픈아이디내놔")
+    wx.request({
+      url:url,
+       method: 'GET',
+       data:{
+         appid:"wx5be09fc9ea2bb7af",
+         secret:"73c38d218a25bd2399786e99dc55486a",
+         js_code: this.data.code,
+          grant_type: 'authorization_code'
+         // name: "pay",
+         // studentCode: "20121313",
+         // wechatToken: "helloworld"
+       },
+       success: function (res) {
+       //  console.log(JSON.stringify(res))
+       // that.setData({curlist:res.data.sendData})
+         console.log(res);
+        
+        // console.log(res.data[0].studentId);
+   
+       },
+       fail: function(res){    console.log(res);  },
+       complete: function(res){
+        console.log(res);
+       }
+     });
+  },
   ReqRes:function(url,i){
     var that=this
     wx.request({// 'http://staris.freehongs.net/web/androidtest.do'
@@ -86,6 +116,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+
     // var thi=this;
     // var ab=3;
     // var a=this.data.a;
@@ -93,6 +124,7 @@ Page({
     const accountInfo = wx.getAccountInfoSync();
   //  console.log(accountInfo) // 小程序 appId
     var that=this;
+
     wx.login({
       
       success (res) {
@@ -101,7 +133,9 @@ Page({
          code:res.code
        })
        // console.log(res)
+       that.getOpenid();
       }
+    
     })
     //052M8a000HQ6GK1Laf100aPXOU0M8a0D
     //0924da000XT6GK1l4l200kPNH044da0S
@@ -141,7 +175,7 @@ console.log("늉");
     //   success(){},
     //   fail(){}
     // })
-
+this.getOpenid();
 //wx5be09fc9ea2bb7af
 
     // wx.navigateTo({
@@ -151,34 +185,7 @@ console.log("늉");
 
 
 
-    var url="https://api.weixin.qq.com/sns/jscode2session";
-    //url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"73c38d218a25bd2399786e99dc55486a"+"&jscode=code"
 
-    wx.request({
-      url:url,
-       method: 'GET',
-       data:{
-         appid:"wx5be09fc9ea2bb7af",
-         secret:"73c38d218a25bd2399786e99dc55486a",
-         js_code: this.data.code,
-          grant_type: 'authorization_code'
-         // name: "pay",
-         // studentCode: "20121313",
-         // wechatToken: "helloworld"
-       },
-       success: function (res) {
-       //  console.log(JSON.stringify(res))
-       // that.setData({curlist:res.data.sendData})
-         console.log(res);
-        
-        // console.log(res.data[0].studentId);
-   
-       },
-       fail: function(){  },
-       complete: function(){
-     
-       }
-     });
 
 
 
@@ -187,7 +194,7 @@ console.log("늉");
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    //this.getOpenid();
   },
 
   /**
