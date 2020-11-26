@@ -69,4 +69,10 @@ Page({
       url: '../Payment/Payment',
     })
   }
+  ,
+  goPayList:function(){
+    wx.navigateTo({
+      url: '../../staris/page1/page1',
+    })
+  }
 })

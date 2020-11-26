@@ -73,5 +73,8 @@ Page({
       success (res) { },
       fail (res) { }
     })
+    wx.navigateTo({
+      url: '../../staris/page2/page2',
+    })
   }
 })

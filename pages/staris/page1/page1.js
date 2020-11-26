@@ -8,6 +8,7 @@ Page({
   data: {
     code:"",
     studentId:1,
+    openId:"",
     semester:[20192,20201,20202],
     forindex:[0,1,2],
     ar:['안','녕','하','세','요'],
@@ -45,6 +46,7 @@ Page({
   getOpenid:function(){
     var url="https://api.weixin.qq.com/sns/jscode2session";
     //url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"73c38d218a25bd2399786e99dc55486a"+"&jscode=code"
+    var that=this;
     console.log("오픈아이디내놔")
     wx.request({
       url:url,
@@ -54,16 +56,14 @@ Page({
          secret:"73c38d218a25bd2399786e99dc55486a",
          js_code: this.data.code,
           grant_type: 'authorization_code'
-         // name: "pay",
-         // studentCode: "20121313",
-         // wechatToken: "helloworld"
+
        },
        success: function (res) {
-       //  console.log(JSON.stringify(res))
-       // that.setData({curlist:res.data.sendData})
-         console.log(res);
-        
-        // console.log(res.data[0].studentId);
+        console.log(res.data);
+         console.log(res.data.openid);
+        that.setData({
+          openId:res.data.openid,
+        })
    
        },
        fail: function(res){    console.log(res);  },
@@ -71,6 +71,10 @@ Page({
         console.log(res);
        }
      });
+  },
+  pay:function(url){
+   
+
   },
   ReqRes:function(url,i){
     var that=this
@@ -116,24 +120,18 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
-    // var thi=this;
-    // var ab=3;
-    // var a=this.data.a;
-    //wx5be09fc9ea2bb7af
-    const accountInfo = wx.getAccountInfoSync();
-  //  console.log(accountInfo) // 小程序 appId
     var that=this;
 
     wx.login({
       
       success (res) {
-       console.log(res.code)
+       console.log("jscode : "+res.code)
+
        that.setData({
          code:res.code
        })
        // console.log(res)
-       that.getOpenid();
+ 
       }
     
     })
@@ -143,10 +141,10 @@ Page({
     for(var i=0;i<this.data.semester.length;i+=1){
       url="http://119.28.235.170/students/student/"+this.data.studentId+"/student-expenses/semester/"+this.data.semester[i]
       this.ReqRes(url,i)
-      console.log(i)
+      //console.log(i)
     }
-
-    console.log(this.data.arobj.toString())
+   // console.log(this.data.arobj.toString())
+//this.pay();
 
 
 
@@ -165,29 +163,9 @@ console.log("늉");
   },
   //Date.now().toString()
   gopage2:function(){
-    // wx.requestPayment({
-    //   nonceStr: '5K8264ILTKCH16CQ2502SI8ZNMTM67VS',
-    //   package: 'Prepay_id =Wx2017033010242291fcfe0db70013231072',
-    //    timeStamp: '1490840662',
-    //    signType:"MD5",
-    //    paySign:"test",
-
-    //   success(){},
-    //   fail(){}
-    // })
-this.getOpenid();
-//wx5be09fc9ea2bb7af
-
-    // wx.navigateTo({
-    //   url: '../page2/page2',
-    // })
-
-
-
-
-
-
-
+    wx.navigateTo({
+      url: '../page2/page2',
+    })
 
   },
   /**

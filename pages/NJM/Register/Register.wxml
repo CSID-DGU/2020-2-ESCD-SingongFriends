@@ -9,7 +9,7 @@
       <text>고지서</text>
     </view>
     <view class="Receipt" style="float: right; width: 48%; padding-left: 5px">
-      <button id="button"><image src="/resource/receipt.png" id="image"></image></button>
+      <button id="button" bindtap="goPayList"><image src="/resource/receipt.png" id="image"></image></button>
       <text>납부내역</text>
     </view>
   </view>
