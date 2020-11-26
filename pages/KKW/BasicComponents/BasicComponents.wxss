@@ -1,2 +1,2 @@
 /* pages/BasicComponents/BasicComponents.wxss */
-@import "../lib/common.wxss"
+@import "../lib/common.wxss";

@@ -1,16 +1,14 @@
 /**index.wxss**/
 
 .top-hor-bar {
-  width: 1000px;
+  width: 100%;
   height: 1px; 
   background-color: black;
-  margin-left:-16px;
   margin-bottom: 150px;
 }
 
 .content-container {
-  margin-left: 16px;
-  margin-bottom: 24px;
+  width: 100%;
   font-size: 13px;
 }
 

@@ -32,12 +32,25 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log(JSON.stringify(res))   
-      //  console.log(res.data[0].studentId)
+        console.log(res.data.done.length)
        that.setData({ 
         // students: res.data,
         doneCourses: that.doneCourses=res.data.done,
-        undoneCourses: that.undoneCourses=res.data.undone
+        undoneCourses: that.undoneCourses=res.data.undone,
       })
+        for(var i in that.undoneCourses){
+          var p=Math.floor(Math.random()*5);
+          if(p%2==0){
+            that.undoneCourses[i].recommended= true;
+          }
+          else{
+            that.undoneCourses[i].recommended= false;
+          }
+        }
+        console.log(that.undoneCourses)
+        that.setData({ 
+          undoneCourses: that.undoneCourses=res.data.undone,
+        })
       },
       fail: function(){  },
       complete: function(){
