@@ -4,7 +4,8 @@ App({
 
   globalData:{userInfo:null,
   host:"http://localhost:8052/",
-sesid:null},
+  sesid:null
+},
 
 
   onLaunch: function () {
@@ -13,6 +14,7 @@ sesid:null},
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    
     // 登录
     wx.login({
       success: res => {

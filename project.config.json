@@ -21,18 +21,16 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "useIsolateContext": true,
-    "useCompilerModule": true,
+    "useCompilerModule": false,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": []
+    "useMultiFrameRuntime": false,
+    "useApiHook": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
@@ -46,29 +44,41 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
+    "plugin": {
       "list": []
     },
     "game": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": -1,
       "list": []
     },
     "gamePlugin": {
-      "current": -1,
       "list": []
     },
     "miniprogram": {
-      "current": -1,
-      "list": []
+      "list": [
+        {
+          "name": "pages/NJM/Login/Login",
+          "pathName": "pages/NJM/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Menu/Menu",
+          "pathName": "pages/NJM/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Register/Register",
+          "pathName": "pages/NJM/Register/Register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Payment/Payment",
+          "pathName": "pages/NJM/Payment/Payment",
+          "scene": null
+        }
+      ]
     }
   }
 }
