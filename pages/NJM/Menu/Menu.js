@@ -68,5 +68,19 @@ Page({
     wx.navigateTo({
       url: '../Register/Register',
     })
+  },
+
+  goToCurriculum: function() {
+    wx.navigateTo({
+      url: '../../KKW/Curriculum/Curriculum',
+    })
+  },
+
+  goToScholarship: function() {
+    wx.navigateTo({
+      url: '../../KHJ/history/index',
+    })
   }
+
 })
+

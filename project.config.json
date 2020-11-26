@@ -68,6 +68,36 @@
         {
           "name": "pages/KKW/BasicComponents/BasicComponents",
           "pathName": "pages/KKW/BasicComponents/BasicComponents",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Login/Login",
+          "pathName": "pages/NJM/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Menu/Menu",
+          "pathName": "pages/NJM/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/staris/page1/page1",
+          "pathName": "pages/staris/page1/page1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/staris/page2/page2",
+          "pathName": "pages/staris/page2/page2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/staris/page3/page3",
+          "pathName": "pages/staris/page3/page3",
           "scene": null
         }
       ]
