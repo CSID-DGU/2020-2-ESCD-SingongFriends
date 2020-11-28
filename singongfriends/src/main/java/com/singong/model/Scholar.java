@@ -1,5 +1,6 @@
 package com.singong.model;
 
+import com.singong.dto.ScholarDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,5 +30,10 @@ public class Scholar {
     public Scholar(String fund, int money) {
         this.fund = fund;
         this.money = money;
+    }
+
+    public static ScholarDTO.GetScholar toGetScholarDTO(Scholar scholar) {
+        return new ScholarDTO.GetScholar(
+                scholar.getScholarId(), scholar.getFund(), scholar.getMoney());
     }
 }

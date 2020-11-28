@@ -15,4 +15,13 @@ public class ScholarDTO {
         private String fund;
         private int money;
     }
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class GetScholar {
+        private int scholarId;
+        private String fund;
+        private int money;
+    }
 }

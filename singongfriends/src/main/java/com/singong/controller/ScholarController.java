@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -28,9 +30,13 @@ public class ScholarController {
     }
 
     @GetMapping("/scholars")
-    public ResponseEntity<List<Scholar>> getAllScholars() {
+    public ResponseEntity<List<ScholarDTO.GetScholar>> getAllScholars() {
         List<Scholar> scholars = scholarRepository.findAll();
-        return new ResponseEntity<>(scholars, HttpStatus.OK);
+        List<ScholarDTO.GetScholar> result = new ArrayList<>();
+        result = scholars.stream()
+                .map(x -> new ScholarDTO.GetScholar(x.getScholarId(), x.getFund(), x.getMoney()))
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }
