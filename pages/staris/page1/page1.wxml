@@ -30,7 +30,7 @@
 <view class="container">
 
   <view class="ctrtext">
-  <text> {{item.amountBeforeReduction}}원  {{semester[index]}}학기 </text>
+  <text> {{item.amountBeforeReduction}}원  {{semester_view[index]}}학기 </text>
   <text id="state">제출완료</text>
 </view></view>
 </block> 

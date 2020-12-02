@@ -7,7 +7,8 @@ Page({
     motto: '으 중국프로그램 너무싫다;',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    result:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,7 +16,77 @@ Page({
       url: '../logs/logs'
     })
   },
+  ReqRes:function(url){
+    var that=this
+    wx.request({// 'http://staris.freehongs.net/web/androidtest.do'
+     //
+     url :url,
+     method: 'GET',
+      data:{},
+      success: function (res) {
+        console.log(res.data);
+
+       that.setData({
+         result:res.data,
+       });
+       var r=that.data.result;
+       console.log(r.length);
+       for(var i=0;i<r.length;i++){
+console.log(r[i].money.toString().length);
+var len=r[i].money.toString().length;
+var newstr="";
+var strmoney=r[i].money.toString()
+switch(len){
+  case 4:
+    for(var k=0;k<len+1;k++){
+      if(k==1){
+        newstr+=",";
+      }
+      newstr+=strmoney[k];
+    }
+    break;
+    case 5:
+      for(var k=0;k<len;k++){
+        if(k==2){
+          newstr+=",";
+        }
+        newstr+=strmoney[k];
+      }
+      break;
+      case 6:
+        for(var k=0;k<len;k++){
+          if(k==3){
+            newstr+=",";
+          }
+          newstr+=strmoney[k];
+        }
+        break;
+        case 7:
+          for(var k=0;k<len;k++){
+            if(k==1||k==4){
+              newstr+=",";
+            }
+            newstr+=strmoney[k];
+          }
+          break;
+          default:
+            break;
+}
+r[i].money=newstr;
+       }
+       that.setData({
+         result:r
+       })
+      },
+      fail: function(res){ },
+      complete: function(){ }
+    });
+  },
   onLoad: function () {
+var url="http://119.28.235.170/student-scholars/1"// 아이디 불러와서 지정해야함 
+this.ReqRes(url);
+
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

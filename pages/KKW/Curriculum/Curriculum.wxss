@@ -1,6 +1,10 @@
 /* pages/Curriculum/Curriculum.wxss */
 @import "../lib/common.wxss";
 
+.recommend{
+   font-weight: bold;
+}
+
 .H-scroll-view{
   white-space: nowrap;
 }
@@ -11,14 +15,22 @@
 }
 .V-scroll-view{
   height: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items:center
 }
 
 .V-scroll-view-mini{
   height: 150px;
+  white-space: nowrap;
 }
 
 .V-scroll-item{
+  display: inline-block;
   height: 40px;
+  width: 10px;
+  text-overflow: ellipsis;
 }
 
 .line{
@@ -27,5 +39,9 @@
   color:black;
   flex-basis: 100%;
   background-color: black;
+}
+
+.btn{
+  width:100px;
 }
 
