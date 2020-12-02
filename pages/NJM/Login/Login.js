@@ -20,21 +20,21 @@ Page({
         var index=0;
         var isregister=false;
         for(;index<res.data.length;index+=1){
-          console.log("oid : "+res.data[index].wechatToken)
+          console.log("openID : "+res.data[index].wechatToken)
           console.log("==? "+openid);
           if(res.data[index].wechatToken==(openid)){
-            console.log("있네");
+            console.log("OpenID가 존재함");
             isregister=true;
             break;
           }else{
-            console.log("없네");
+            console.log("OpenID가 존재하지 않음");
           }
         }
         if(isregister){
-          console.log("결론 : 있지롱");
+          console.log("결론 : OpenID 존재 o");
         }
         else{
-          console.log("결론 : 없는디");
+          console.log("결론 : OpenID 존재 x");
         }
  
 

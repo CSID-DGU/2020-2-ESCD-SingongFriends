@@ -34,7 +34,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
-  "appid": "wx5be09fc9ea2bb7af",
+  "appid": "wxadc53e9cec8c2341",
   "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
@@ -47,19 +47,13 @@
     "plugin": {
       "list": []
     },
-    "plugin": {
-      "current": -1,
-      "list": []
-    },
     "game": {
-      "current": -1,
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": [
         {
           "id": -1,
@@ -72,13 +66,6 @@
           "id": -1,
           "name": "pages/staris/page2/page2",
           "pathName": "pages/staris/page2/page2",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/staris/page3/page3",
-          "pathName": "pages/staris/page3/page3",
           "query": "",
           "scene": null
         },
@@ -97,16 +84,33 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/KKW/index/index",
-          "pathName": "pages/KKW/index/index",
+          "id": 6,
+          "name": "pages/KHJ/history/index",
+          "pathName": "pages/KHJ/history/index",
           "query": "",
           "scene": null
         },
         {
-          "id": 6,
-          "name": "pages/KHJ/history/index",
-          "pathName": "pages/KHJ/history/index",
+          "name": "pages/NJM/Login/Login",
+          "pathName": "pages/NJM/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Menu/Menu",
+          "pathName": "pages/NJM/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Payment/Payment",
+          "pathName": "pages/NJM/Payment/Payment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Register/Register",
+          "pathName": "pages/NJM/Register/Register",
           "query": "",
           "scene": null
         }
