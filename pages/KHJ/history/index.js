@@ -83,7 +83,7 @@ r[i].money=newstr;
     });
   },
   onLoad: function () {
-var url="http://119.28.235.170/student-scholars/1"// 아이디 불러와서 지정해야함 
+var url="http://119.28.235.170/student-scholars/"+app.globalData.studentID// 아이디 불러와서 지정해야함 
 this.ReqRes(url);
 
 

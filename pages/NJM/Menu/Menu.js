@@ -13,7 +13,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-console.log("된거여?"+app.globalData.sesid);
+console.log("된거여?"+app.globalData.studentID);
   },
 
   /**

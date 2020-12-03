@@ -1,15 +1,15 @@
 //app.js
 App({
-
-
-  globalData:{userInfo:null,
-  host:"http://localhost:8052/",
-  sesid:""
+  globalData:{
+    userInfo:null,
+    host:"http://localhost:8052/",
+    sesid:null,
+    studentID:""
 },
+  setStdentID: function (test) {
+    this.studentID = test;
+  },
 
-setsessionid:function(id){
-this.globalData.sesid=id;
-},
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

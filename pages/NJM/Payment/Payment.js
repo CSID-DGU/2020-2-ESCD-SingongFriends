@@ -1,4 +1,5 @@
 // pages/Payment/Payment.js
+const app = getApp()
 Page({
 
   /**
@@ -141,7 +142,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    var url="http://119.28.235.170/student-scholars/1";
+    var url="http://119.28.235.170/student-scholars/"+app.globalData.studentID;
 this.ReqRes(url);
   },
 

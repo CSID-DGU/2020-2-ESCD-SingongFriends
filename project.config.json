@@ -46,27 +46,16 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
     "plugin": {
-      "current": -1,
       "list": []
     },
     "game": {
-      "current": -1,
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": [
         {
           "id": -1,
@@ -136,6 +125,35 @@
           "name": "pages/KHJ/index/index",
           "pathName": "pages/KHJ/index/index",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Login/Login",
+          "pathName": "pages/NJM/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Menu/Menu",
+          "pathName": "pages/NJM/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Register/Register",
+          "pathName": "pages/NJM/Register/Register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Payment/Payment",
+          "pathName": "pages/NJM/Payment/Payment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/KHJ/history/index",
+          "pathName": "pages/KHJ/history/index",
           "scene": null
         }
       ]

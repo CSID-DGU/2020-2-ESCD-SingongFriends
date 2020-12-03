@@ -1,5 +1,5 @@
 // pages/syntax/syntax.js
-
+const app = getApp()
 Page({
 
   /**
@@ -63,7 +63,7 @@ Page({
        },
        success: function (res) {
         console.log(res.data);
-         console.log(res.data.openid);
+         console.log("openid: " + res.data.openid);
         that.setData({
           openId:res.data.openid,
         })
@@ -85,7 +85,11 @@ Page({
      method: 'GET',
       data:{},
       success: function (res) {
-        console.log(res.data);
+        if(res.data.length==0)
+        {console.log("no data");
+          return "no data"; 
+
+        }console.log(res.data);
         var stramount=res.data.amountBeforeReduction.toString();
         var len=stramount.length;
         var newstr="";
@@ -165,7 +169,7 @@ Page({
     var url="";
     var len=this.data.semester.length;
      for(var i=0;i<len;i+=1){
-      url="http://119.28.235.170/students/student/"+this.data.studentId+"/student-expenses/semester/"+this.data.semester[i]
+      url="http://119.28.235.170/students/student/"+app.globalData.studentID+"/student-expenses/semester/"+this.data.semester[i]
       this.ReqRes(url,i)
     }
     this.setData({
@@ -196,7 +200,7 @@ console.log("늉");
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    //this.getOpenid();
+    // this.getOpenid();
 
   },
 
