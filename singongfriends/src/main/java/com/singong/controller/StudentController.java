@@ -12,10 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +42,21 @@ public class StudentController {
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
+    @PostMapping("/logout")
+    public ResponseEntity<Boolean> logOut(@RequestBody StudentDTO.Logout logoutForm) {
+        List<Student> students = studentRepository.findByStudentCode(logoutForm.getStudentCode());
+        if (students == null || (students.size() == 0)) {
+            return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+        }
+        Student student = students.get(0);
+        if (!student.getPassword().equals(logoutForm.getPassword())) {
+            return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+        }
+        student.setWechatToken("");
+        studentRepository.save(student);
+        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+    }
+
     @PostMapping("/students")
     public ResponseEntity<Boolean> addStudents(@RequestBody List<StudentDTO.StudentCreate> newStudents) {
         for (StudentDTO.StudentCreate student : newStudents) {
@@ -70,6 +82,18 @@ public class StudentController {
                 .map(StudentDTO.StudentGet::fromStudent)
                 .forEach(students::add);
         return new ResponseEntity<>(students, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/students")
+    public ResponseEntity<Boolean> deleteAllStudent() {
+        studentRepository.deleteAll();
+        return new ResponseEntity<>(true, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/students/{studentId}")
+    public ResponseEntity<Boolean> deleteStudentByStudentId(@PathVariable("studentId") int studentId) {
+        studentRepository.deleteById(studentId);
+        return new ResponseEntity<>(true, HttpStatus.OK);
     }
 
     @GetMapping("/students/student/token/{wechatToken}")

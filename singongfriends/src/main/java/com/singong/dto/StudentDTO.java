@@ -18,6 +18,13 @@ public class StudentDTO {
 
     @Getter @Setter
     @NoArgsConstructor @AllArgsConstructor
+    public static class Logout{
+        private String studentCode;
+        private String password;
+    }
+
+    @Getter @Setter
+    @NoArgsConstructor @AllArgsConstructor
     public static class StudentCreate {
         private String studentCode;
         private String password;
