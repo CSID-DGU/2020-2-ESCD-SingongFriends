@@ -3,11 +3,15 @@
   <view class="Logo">
     <image src="/resource/Logo.jpg" id="logo_image"></image>
   </view>
+
+  <form bindtap="Login">
   <view class="Input" style="border-width:2px; border-color: gray; border-style:solid">
-      <input id="input" type="number" placeholder="학번을 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
-      <input id="input" type="password" placeholder="비밀번호를 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
+      <input id="input" type="number" bindinput="id" placeholder="학번을 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
+      <input id="input" type="password" bindinput="pw" placeholder="비밀번호를 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
   </view>
-  <view class="Button">
-    <button id="login_button" style="color:#fff" bindtap="goToMenu">로그인</button>
+  <view class="Button"> 
+    <!-- bindtap="goToMenu" -->
+    <submit id="login_button" style="color:#fff">로그인</submit>
   </view>
+</form>
 </view>

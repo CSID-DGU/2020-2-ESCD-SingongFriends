@@ -1,12 +1,37 @@
+const app = getApp()
+
 Page({
+
 
   /**
    * Page initial data
    */
   data: {
+    id:"",
+    pw:"",
     code:"",
     openId:"",
+  },
+  id:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      id:e.detail.value,
+    })
+  },
+  pw:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      pw:e.detail.value,
+    })
   }, 
+  Login:function(e){
+console.log(this.data.id + this.data.pw);
+wx.navigateTo({
+  url: '../Menu/Menu',
+})
+  },
+
+
   tryLogin:function(openid){
     var url="http://119.28.235.170/students";
     //url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"73c38d218a25bd2399786e99dc55486a"+"&jscode=code"
@@ -32,7 +57,17 @@ Page({
         }
         if(isregister){
           console.log("결론 : 있지롱");
-        }
+          //app.globalData.sesid:res.data[index].wechatToken
+          //--------------------------------start
+        //  app.setsessionid(openid),
+        //   wx.navigateTo({
+        //     url: '../Menu/Menu',
+        //   })
+                    //--------------------------------end
+       
+       
+       
+                  }
         else{
           console.log("결론 : 없는디");
         }

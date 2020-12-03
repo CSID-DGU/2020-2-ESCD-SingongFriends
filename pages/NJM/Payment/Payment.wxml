@@ -40,15 +40,15 @@
     </view>
     <view class="table_cell">
       <view class="td td1">수업료</view>
-      <view class="td td2">4,580,000</view>
-      <view class="td td3">1,603,000</view>
-      <view class="td td4">2,977,000</view>
+      <view class="td td2">{{pay}}</view>
+      <view class="td td3">{{pay2}}</view>
+      <view class="td td4">{{pay3}}</view>
     </view>
     <view class="table_cell">
       <view class="td td1 bottom-left">등록금계</view>
-      <view class="td td2">4,580,000</view>
-      <view class="td td3">1,603,000</view>
-      <view class="td td4 bottom-right">2,977,000</view>
+      <view class="td td2">{{pay}}</view>
+      <view class="td td3">{{pay2}}</view>
+      <view class="td td4 bottom-right">{{pay3}}</view>
     </view>
   </view>
   <view class="Payment">

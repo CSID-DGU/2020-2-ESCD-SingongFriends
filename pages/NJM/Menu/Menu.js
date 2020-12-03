@@ -1,4 +1,5 @@
 // pages/Menu/Menu.js
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+console.log("된거여?"+app.globalData.sesid);
   },
 
   /**
