@@ -63,7 +63,7 @@ Page({
        },
        success: function (res) {
         console.log(res.data);
-         console.log(res.data.openid);
+         console.log("openid: " + res.data.openid);
         that.setData({
           openId:res.data.openid,
         })
@@ -196,7 +196,7 @@ console.log("늉");
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    //this.getOpenid();
+    // this.getOpenid();
 
   },
 

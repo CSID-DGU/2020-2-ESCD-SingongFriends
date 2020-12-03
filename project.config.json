@@ -36,7 +36,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
-  "appid": "wxadc53e9cec8c2341",
+  "appid": "wx5be09fc9ea2bb7af",
   "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
@@ -46,12 +46,7 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
+    "plugin": {
       "list": []
     },
     "game": {
@@ -77,6 +72,13 @@
           "scene": null
         },
         {
+          "id": -1,
+          "name": "pages/staris/page3/page3",
+          "pathName": "pages/staris/page3/page3",
+          "query": "",
+          "scene": null
+        },
+        {
           "id": 3,
           "name": "pages/KKW/Curriculum/Curriculum",
           "pathName": "pages/KKW/Curriculum/Curriculum",
@@ -91,33 +93,16 @@
           "scene": null
         },
         {
+          "id": -1,
+          "name": "pages/KKW/index/index",
+          "pathName": "pages/KKW/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
           "id": 6,
           "name": "pages/KHJ/history/index",
           "pathName": "pages/KHJ/history/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Login/Login",
-          "pathName": "pages/NJM/Login/Login",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Menu/Menu",
-          "pathName": "pages/NJM/Menu/Menu",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Payment/Payment",
-          "pathName": "pages/NJM/Payment/Payment",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Register/Register",
-          "pathName": "pages/NJM/Register/Register",
           "query": "",
           "scene": null
         },
@@ -140,6 +125,35 @@
           "name": "pages/KHJ/index/index",
           "pathName": "pages/KHJ/index/index",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Login/Login",
+          "pathName": "pages/NJM/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Menu/Menu",
+          "pathName": "pages/NJM/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Register/Register",
+          "pathName": "pages/NJM/Register/Register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Payment/Payment",
+          "pathName": "pages/NJM/Payment/Payment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/KHJ/history/index",
+          "pathName": "pages/KHJ/history/index",
           "scene": null
         }
       ]

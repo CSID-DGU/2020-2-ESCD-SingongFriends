@@ -1,5 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+  <view>
+    한국어 <switch checked="{{indicatorDots}}" bindchange="changeProperty" data-var-name="indicatorDots"/> 중국어
+  </view>
   <view class="Logo">
     <image src="/resource/Logo.jpg" id="logo_image"></image>
   </view>
