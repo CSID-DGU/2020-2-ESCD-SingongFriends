@@ -5,7 +5,22 @@ Page({
   data: {
     code:"",
     openId:"",
-  }, 
+    stID:"",
+    stPW:"",
+    stName:""
+  },
+  input_stID: function (e) {
+    this.setData({
+      stID: e.detail.value
+    })
+  },
+
+  input_stPW: function (e) {
+    this.setData({
+      stPW: e.detail.value
+    })
+  },
+
   tryLogin:function(openid){
     var url="http://119.28.235.170/students";
     //url = url + "?appid=" + "wx5be09fc9ea2bb7af"+"&secret="+"73c38d218a25bd2399786e99dc55486a"+"&jscode=code"
@@ -18,17 +33,42 @@ Page({
         console.log(res.data.length);
         var index=0;
         var isregister=false;
+
         for(;index<res.data.length;index+=1){
           console.log("openID : "+res.data[index].wechatToken)
           console.log("==? "+openid);
           if(res.data[index].wechatToken==(openid)){
             // console.log("OpenID가 존재함");
             isregister=true;
+            getApp().globalData.studentID = res.data[index].studentId;
+            that.data.stID = res.data[index].studentId;
+            that.data.stName = res.data[index].name;
             break;
           }
         }
         if(isregister){
           console.log("결론 : OpenID 존재 o");
+          console.log("studentID: " + getApp().globalData.studentID);
+          console.log("studentName: " + that.data.stName);
+          wx.showModal({
+            title: that.data.stName,
+            content: "으로 로그인할까요?",
+            confirmText: "확인",
+            cancelText: "취소",
+            cancelColor: 'cancelColor',
+            success (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '../Menu/Menu',
+                })
+              }
+            }
+          })
+          /*
+          wx.navigateTo({
+            url: '../Menu/Menu',
+          })
+          */
         }
         else{
           console.log("결론 : OpenID 존재 x");
@@ -84,6 +124,8 @@ Page({
        that.getOpenid();
       }
     })
+
+    
   },
 
   /**
@@ -97,7 +139,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    
   },
 
   /**
@@ -135,12 +176,35 @@ Page({
 
   },
 
-  goToMenu: function () {
+  checkStudent: function () {
     
-    wx.navigateTo({
-      url: '../Menu/Menu',
-    })
-    
+    var url="http://119.28.235.170/login";
+    wx.request({
+      url:url,
+       method: 'POST',
+       data:{
+         studentCode: this.data.stID,
+         password: this.data.stID,
+         wechatToken: this.data.openId
+       },
+       success: function (res) {
+        var flag = res
+        console.log("로그인 성공?: " + res.data)
+        if(res.data){
+          console.log("로그인 성공");
 
+          wx.navigateTo({
+            url: '../Login/Login',
+          })
+        }
+        else{
+          console.log("로그인 실패");
+        }
+       },
+       fail: function(res){    console.log(res);  },
+       complete: function(res){
+        console.log(res);
+       }
+     });
   }
 })

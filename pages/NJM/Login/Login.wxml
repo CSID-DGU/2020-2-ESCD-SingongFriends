@@ -1,16 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  <view>
-    한국어 <switch checked="{{indicatorDots}}" bindchange="changeProperty" data-var-name="indicatorDots"/> 중국어
-  </view>
   <view class="Logo">
     <image src="/resource/Logo.jpg" id="logo_image"></image>
   </view>
   <view class="Input" style="border-width:2px; border-color: gray; border-style:solid">
-      <input id="input" type="number" placeholder="학번을 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
-      <input id="input" type="password" placeholder="비밀번호를 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
+      <input id="input" bindinput="input_stID" type="number" placeholder="학번을 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
+      <input id="input" bindinput="input_stPW" type="password" placeholder="비밀번호를 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
   </view>
   <view class="Button">
-    <button id="login_button" style="color:#fff" bindtap="goToMenu">로그인</button>
+    <button id="login_button" style="color:#fff" bindtap="checkStudent">로그인</button>
   </view>
 </view>
