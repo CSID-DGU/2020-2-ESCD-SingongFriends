@@ -4,7 +4,8 @@ App({
     userInfo:null,
     host:"http://localhost:8052/",
     sesid:null,
-    studentID:""
+    studentID:"",
+    language:""
 },
   setStdentID: function (test) {
     this.studentID = test;

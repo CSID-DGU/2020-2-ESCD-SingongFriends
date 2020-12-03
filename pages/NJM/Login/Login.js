@@ -7,7 +7,13 @@ Page({
     openId:"",
     stID:"",
     stPW:"",
-    stName:""
+    stName:"",
+    select: false,
+    dropdown: 'Language',
+
+    message_ID: "학번을 입력하세요",
+    message_PW: "비밀번호를 입력하세요",
+    message_Login: "로그인"
   },
   input_stID: function (e) {
     this.setData({
@@ -50,20 +56,36 @@ Page({
           console.log("결론 : OpenID 존재 o");
           console.log("studentID: " + getApp().globalData.studentID);
           console.log("studentName: " + that.data.stName);
-          wx.showModal({
-            title: that.data.stName,
-            content: "으로 로그인할까요?",
-            confirmText: "확인",
-            cancelText: "취소",
-            cancelColor: 'cancelColor',
-            success (res) {
-              if (res.confirm) {
-                wx.navigateTo({
-                  url: '../Menu/Menu',
-                })
+          if (that.data.dropdown == "中文") {            
+            wx.showModal({
+              title: that.data.stName,
+              content: "要登录吗？",
+              cancelColor: 'cancelColor',
+              success (res) {
+                if (res.confirm) {
+                  wx.navigateTo({
+                    url: '../Menu/Menu',
+                  })
+                }
               }
-            }
-          })
+            })
+          } else {
+            wx.showModal({
+              title: that.data.stName,
+              content: "으로 로그인할까요?",
+              confirmText: "확인",
+              cancelText: "취소",
+              cancelColor: 'cancelColor',
+              success (res) {
+                if (res.confirm) {
+                  wx.navigateTo({
+                    url: '../Menu/Menu',
+                  })
+                }
+              }
+            })
+          }
+          
           /*
           wx.navigateTo({
             url: '../Menu/Menu',
@@ -113,7 +135,23 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-
+    that.setData({
+      dropdown: getApp().globalData.language
+    })
+    console.log("currentLanguage: " + getApp().globalData.language)
+    if (that.data.dropdown == "한국어") {
+      this.setData({
+        message_ID: "학번을 입력하세요.",
+        message_PW: "비밀번호를 입력하세요.",
+        message_Login: "로그인"
+      })
+    } else if (that.data.dropdown == "中文") {
+      this.setData({
+        message_ID: "请输入学号。",
+        message_PW: "请输入密码。",
+        message_Login: "登录"
+      })
+    }
     wx.login({
       success (res) {
        console.log("jscode : "+res.code)
@@ -177,7 +215,9 @@ Page({
   },
 
   checkStudent: function () {
-    
+    this.setData({
+      dropdown:getApp().globalData.language
+    });
     var url="http://119.28.235.170/login";
     wx.request({
       url:url,
@@ -206,5 +246,35 @@ Page({
         console.log(res);
        }
      });
+  },
+
+  bindShowMsg() {
+    this.setData({
+        select:!this.data.select
+    })
+  },
+
+  mySelect(e) {
+    var name = e.currentTarget.dataset.name
+    getApp().globalData.language = name
+    console.log("currentLanguage: " + getApp().globalData.language)
+    this.setData({
+        dropdown: name,
+        select: false
+    })
+
+    if (name == "한국어") {
+      this.setData({
+        message_ID: "학번을 입력하세요.",
+        message_PW: "비밀번호를 입력하세요.",
+        message_Login: "로그인"
+      })
+    } else if (name == "中文") {
+      this.setData({
+        message_ID: "请输入学号。",
+        message_PW: "请输入密码。",
+        message_Login: "登录"
+      })
+    }
   }
 })

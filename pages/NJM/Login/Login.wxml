@@ -1,13 +1,20 @@
 <!--index.wxml-->
 <view class="container">
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
   <view class="Logo">
     <image src="/resource/Logo.jpg" id="logo_image"></image>
   </view>
   <view class="Input" style="border-width:2px; border-color: gray; border-style:solid">
-      <input id="input" bindinput="input_stID" type="number" placeholder="학번을 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
-      <input id="input" bindinput="input_stPW" type="password" placeholder="비밀번호를 입력하세요." onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
+      <input id="input" bindinput="input_stID" type="number" placeholder="{{message_ID}}" onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
+      <input id="input" bindinput="input_stPW" type="password" placeholder="{{message_PW}}" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
   </view>
   <view class="Button">
-    <button id="login_button" style="color:#fff" bindtap="checkStudent">로그인</button>
+    <button id="login_button" style="color:#fff" bindtap="checkStudent">{{message_Login}}</button>
   </view>
 </view>
