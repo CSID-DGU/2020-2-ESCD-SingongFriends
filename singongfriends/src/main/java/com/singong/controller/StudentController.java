@@ -49,9 +49,6 @@ public class StudentController {
             return new ResponseEntity<Boolean>(false, HttpStatus.OK);
         }
         Student student = students.get(0);
-        if (!student.getPassword().equals(logoutForm.getPassword())) {
-            return new ResponseEntity<Boolean>(false, HttpStatus.OK);
-        }
         student.setWechatToken("");
         studentRepository.save(student);
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);

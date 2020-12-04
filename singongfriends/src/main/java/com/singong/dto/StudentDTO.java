@@ -20,7 +20,6 @@ public class StudentDTO {
     @NoArgsConstructor @AllArgsConstructor
     public static class Logout{
         private String studentCode;
-        private String password;
     }
 
     @Getter @Setter
