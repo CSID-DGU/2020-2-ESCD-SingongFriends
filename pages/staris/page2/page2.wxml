@@ -1,13 +1,15 @@
 <!--pages/page2/page2.wxml-->
 <!--ifelse로 처리해야할듯-->
-<view id="logotxt">Notification</view>
-<view class="ctrtext">정상적으로 납부 되었습니다. 감사합니다!</view>
 
-<block>
-  <view class="ctrtext2"  bindtap="go">
-    <text >납부 금액 :</text><text class="cost"> {{obj.key1}}\n\n</text>
-    <text >납부 학기 : </text> <text class="semester"> {{obj.key2}}\n\n</text>
-    <text class="state">납부 날짜 : {{obj.key3}} </text>
+<view class="container">
+  <view id="logotxt">Notification</view>
+  <view class="ctrtext">정상적으로 납부 되었습니다. 감사합니다!</view>
 
-  </view>
-</block>
+  <block>
+    <view class="ctrtext2"  bindtap="go">
+      <text >납부 금액 :</text><text class="cost"> {{obj.key1}}\n\n</text>
+      <text >납부 학기 : </text> <text class="semester"> {{obj.key2}}\n\n</text>
+      <text class="state">납부 날짜 : {{obj.key3}} </text>
+    </view>
+  </block>
+</view>

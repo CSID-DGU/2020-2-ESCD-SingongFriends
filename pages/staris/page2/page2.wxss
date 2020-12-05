@@ -1,21 +1,25 @@
 /* pages/syntax/syntax.wxss */
+
 #logotxt{
   margin-top: 50%;
   font-size: 15px;
   color:orange;
+  margin-right: 70%;
 }
 
   .ctrtext{
-  margin-top: 10px;
-  text-align: center;
-  color: black;
-  border-color: cyan;
-  background-origin: padding-box; 
-  border-style: double;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    width: 95%;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    border-color: cyan;
+    background-origin: padding-box; 
+    border-style: double;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .ctrtext2{
+  width: 95%;
   border-color: black;
   background-origin: padding-box; 
   border-style: double;
