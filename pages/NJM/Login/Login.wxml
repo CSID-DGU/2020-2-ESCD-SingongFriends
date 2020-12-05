@@ -10,8 +10,6 @@
   <view class="Logo">
     <image src="/resource/Logo.jpg" id="logo_image"></image>
   </view>
-
-  <form bindtap="Login">
   <view class="Input" style="border-width:2px; border-color: gray; border-style:solid">
       <input id="input" bindinput="input_stID" type="number" placeholder="{{message_ID}}" onfocus="this.placeholder=''" onblur="this.placeholder='학번을 입력하세요.'"></input>
       <input id="input" bindinput="input_stPW" type="password" placeholder="{{message_PW}}" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호를 입력하세요.'"></input>
@@ -19,5 +17,4 @@
   <view class="Button">
     <button id="login_button" style="color:#fff" bindtap="checkStudent">{{message_Login}}</button>
   </view>
-</form>
 </view>
