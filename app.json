@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/NJM/Menu/Menu",
     "pages/staris/page1/page1",
     "pages/staris/page3/page3",
     "pages/staris/test/test",
@@ -8,10 +9,8 @@
     "pages/staris/page2/page2",
     "pages/staris/myinfo/myinfo",
     "pages/NJM/Login/Login",
-    "pages/NJM/Menu/Menu",
     "pages/NJM/Register/Register",
     "pages/NJM/Payment/Payment",
-
     "pages/KHJ/index/index",
     "pages/KHJ/register/index",
     "pages/KHJ/history/index",
@@ -19,7 +18,8 @@
     "pages/KKW/Curriculum/Curriculum",
     "pages/KKW/BasicComponents/BasicComponents",
     "pages/KKW/index/index",
-    "pages/KKW/test/test"
+    "pages/KKW/test/test",
+    "pages/KKW/Menu/Menu"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,6 +40,8 @@
       }
     ]
   },
+  
+
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

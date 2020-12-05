@@ -1,71 +1,134 @@
-<!--pages/Curriculum/Curriculum.wxml-->
-<view class ='section'>
-  <view ></view> </view>
-
-<view calss='section'>
- <view class="flex justify-center">
-    <view class="basis-60per bg-orange flex justify-center titleFont">미수강과목</view>
-  </view>
-<view class ='section'>
-<view class="line"></view> 
+<view class='section'>
+  <marquee text="adfadfadsf">
+  </marquee>
 </view>
 
+
+
+<view calss='section'>
   <view class="flex justify-center">
+    <view class="basis-60per bg-orange flex justify-center titleFont">课程未选</view>
+  </view>
+  <view class='section'>
+    <view class="line"></view>
+  </view>
+  <view class="flex justify-right" style="color: red; font-size:80%; margin-bottom:1%;">
+    ※红色是推荐路线※
+  </view>
+  <view></view>
+
+  <view class="flex justify-center" style="margin-bottom:5%;">
     <scroll-view class="basis-60per V-scroll-view " scroll-y="true">
 
-    <block wx:for="{{undoneCourses}}" class="basis-60per V-scroll-item ">
+      <block wx:for="{{undoneCourses}}" class="V-scroll-item ">
+        <view class="flex">
 
-      <view wx:if="{{index%2==0}}">
-      <view class="bg-wheat">
-        <button type="default" style="width:100%;" size="{{btnSize}}"  loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 
-          <block wx:if="{{item.recommended==true}}" style="recommended">(추천)</block>
-          {{item.courseTitle}} 
-        </button>
-      </view>
-    </view>
-      
-    <view wx:else>
-      <button type="default" style="width:100%;" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 
-        <block wx:if="{{item.recommended==true}}" style="recommended">(추천)</block>
-          {{item.courseTitle}} 
-        </button>
-    </view>
-      
-      <!-- <block wx:for="{{students}}" class="V-scroll-item">
-       
-      <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> {{item.name}}
-      </button> -->
-      
-    </block>
+          <view wx:if="{{index%2==0}}" class="bg-wheat" style="width:100%;">
+            <button type="default" bind:touchstart="touched"  bind:touchend="touchedend" style="width:100%; height:50px" size="{{btnSize}}" loading="{{loading}}"
+              plain="{{plain}}" disabled="{{disabled}}">
+              <movable-area>
+                <movable-view wx:if="{{movable==true}}" direction="horizontal" out-of-bounds="true">
+                  <view wx:if="{{item.recommended==true}}" class="recommended">
+                    {{item.courseTitle}}
+                  </view>
+                  <view wx:else>
+                    {{item.courseTitle}}
+                  </view>
+                </movable-view>
+
+                <movable-view wx:else> 
+                  <view wx:if="{{item.recommended==true}}" class="recommended">
+                    {{item.courseTitle}}
+                  </view>
+                  <view wx:else>
+                    {{item.courseTitle}}
+                  </view>
+                </movable-view>
+              </movable-area>
+            </button>
+
+          </view>
+
+          <view wx:else style="width:100%;">
+            <button type="default" bind:touchstart="touched"  bind:touchend="touchedend" style="width:100%; height:50px" size="{{btnSize}}" loading="{{loading}}"
+              plain="{{plain}}" disabled="{{disabled}}">
+
+              <movable-area>
+                <movable-view wx:if="{{movable==true}}" direction="horizontal" out-of-bounds="true">
+                  <view wx:if="{{item.recommended==true}}" class="recommended">
+                    {{item.courseTitle}}
+                  </view>
+                  <view wx:else>
+                    {{item.courseTitle}}
+                  </view>
+                </movable-view>
+
+                <movable-view wx:else> 
+                  <view wx:if="{{item.recommended==true}}" class="recommended">
+                    {{item.courseTitle}}
+                  </view>
+                  <view wx:else>
+                    {{item.courseTitle}}
+                  </view>
+                </movable-view>
+
+              </movable-area>
+
+
+            </button>
+          </view>
+
+        </view>
+
+      </block>
     </scroll-view>
   </view>
 </view>
 
 
 <view class='section'>
-   <view class="flex justify-center">
-    <view class="basis-60per bg-gray flex justify-center titleFont">수강과목</view>
+  <view class="flex justify-center">
+    <view class="basis-60per bg-gray flex justify-center titleFont">已采取学科</view>
   </view>
-  <view class ='section'>
-  <view class="line"></view> 
+  <view class='section'>
+    <view class="line"></view>
   </view>
 
-   <view class="flex justify-center">
+  <view class="flex justify-center">
     <scroll-view class="basis-60per V-scroll-view-mini" scroll-y="true">
-    <block wx:for="{{doneCourses}}" class="V-scroll-item">
-      <view wx:if="{{index%2==0}}">
-      <view class="bg-wheat">
-      <button type="default"  style="width:240px;" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" 
-      > {{item.courseTitle}}
-      </button>
-      </view>
-      </view>
+      <block wx:for="{{doneCourses}}" class="V-scroll-item">
+        <view wx:if="{{index%2==0}}" class="bg-wheat" style="width:100%;">
 
-      <view wx:else>
-        <button type="default" style="width:240px;" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" > {{item.courseTitle}}
+          <button type="default" bind:touchstart="touched"  bind:touchend="touchedend" style="width:100%; height:50px" size="{{btnSize}}" loading="{{loading}}"
+            plain="{{plain}}" disabled="{{disabled}}">
+            <movable-area>
+              <movable-view wx:if="{{movable==true}}" direction="horizontal" out-of-bounds="true" > 
+                {{item.courseTitle}}
+              </movable-view>
+              <movable-view wx:else> 
+                {{item.courseTitle}}
+              </movable-view>
+            </movable-area>
           </button>
+
         </view>
-    </block>
+
+        <view wx:else>
+
+          <button type="default" bind:touchstart="touched"  bind:touchend="touchedend" style="width:100%; height:50px" size="{{btnSize}}" loading="{{loading}}"
+            plain="{{plain}}" disabled="{{disabled}}">
+            <movable-area>
+              <movable-view wx:if="{{movable==true}}" direction="horizontal" out-of-bounds="true" > 
+                {{item.courseTitle}}
+              </movable-view>
+              <movable-view wx:else> 
+                {{item.courseTitle}}
+              </movable-view>
+            </movable-area>
+          </button>
+
+        </view>
+      </block>
     </scroll-view>
   </view>
 </view>

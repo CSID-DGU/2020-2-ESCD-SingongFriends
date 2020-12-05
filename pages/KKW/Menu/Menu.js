@@ -64,23 +64,16 @@ Page({
 
   },
 
-  goToRegister: function() {
+  goToInfo: function() {
     wx.navigateTo({
-      url: '../Register/Register',
+      url: '../BasicComponents/BasicComponents',
     })
   },
 
   goToCurriculum: function() {
     wx.navigateTo({
-      url: '../../KKW/Menu/Menu',
+      url: '../Curriculum/Curriculum',
     })
   },
-
-  goToScholarship: function() {
-    wx.navigateTo({
-      url: '../../KHJ/history/index',
-    })
-  }
-
 })
 

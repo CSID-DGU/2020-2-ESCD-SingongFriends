@@ -1,38 +1,37 @@
 Page({
   data: {
-    btnSize: 1,
+    btnSize: 2,
     disabled: false,
     plain: true,
     loading: false,
-
-    subjects:[
-      { name: '과목1', recommended: true},
-      { name: '과목2', recommended: false},
-      { name: '과목3', recommended: true},
-      { name: '과목4', recommended: true },
-      { name: '과목5', recommended: false},
-      { name: '과목6', recommended: false},
-      { name: '과목7', recommended: true },
-      { name: '과목8', recommended: true },
-      { name: '과목9', recommended: true },
-    ],
-
-    takenSubjects:[
-      '과목10','과목11','과목12','과목13'
-    ], 
-    
+  
     undoneCourses:[],
-    doneCourses:[]
-   
+    doneCourses:[],
+    
+    movable: false
+
   },
+
+  touched:function(){
+    this.setData({
+      movable: this.data.movable = true
+    })
+  },
+
+  touchedend:function(){
+    this.setData({
+      movable: this.data.movable = false 
+    })
+  },
+
   onLoad: function (options) {
     var that=this
     wx.request({
      url:'http://119.28.235.170/student-courses',
       method: 'GET',
       success: function (res) {
-        console.log(JSON.stringify(res))   
-        console.log(res.data.done.length)
+        // console.log(JSON.stringify(res))   
+        // console.log(res.data.done.length)
        that.setData({ 
         // students: res.data,
         doneCourses: that.doneCourses=res.data.done,
@@ -80,4 +79,5 @@ Page({
       loading: !this.data.loading
     })
   },
+
 })
