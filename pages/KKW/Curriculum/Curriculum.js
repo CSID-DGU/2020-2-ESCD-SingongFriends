@@ -1,4 +1,4 @@
-const app = getApp()
+
 Page({
   data: {
     btnSize: 2,
@@ -9,6 +9,9 @@ Page({
     undoneCourses:[],
     doneCourses:[],
     
+    recommend:["System Software",
+     "Basic Programming",
+    ],
     movable: false
 
   },
@@ -26,6 +29,7 @@ Page({
   },
 
   onLoad: function (options) {
+  
     var that=this
     wx.request({
      url:'http://119.28.235.170/student-courses',
@@ -49,15 +53,26 @@ Page({
         //     that.undoneCourses[i].recommended= false;
         //   }
         // }
-        for(var i in that.undoneCourses){
-          var p=Math.floor(Math.random()*5);
-          if(p%2==0){
-            that.undoneCourses[i].recommended= true;
-          }
-          else{
-            that.undoneCourses[i].recommended= false;
+     console.log(that.data.recommend)
+        for (var i in that.data.recommend){
+          for (var j in that.data.undoneCourses){
+            console.log(that.data.recommend[i]+that.data.undoneCourses[j].courseTitle)
+            if(that.data.recommend[i]==that.data.undoneCourses[j].courseTitle){
+              that.undoneCourses[j].recommended= true;
+            }
           }
         }
+        for (var j in that.data.undoneCourses){
+          
+          console.log(that.undoneCourses[j].courseTitle+that.undoneCourses[j].recommended)
+          if(!that.undoneCourses[j].recommended){
+            that.undoneCourses[j].recommended=false;
+          }
+          
+        }
+
+
+
         console.log(that.undoneCourses)
         that.setData({ 
           undoneCourses: that.undoneCourses=res.data.undone,
