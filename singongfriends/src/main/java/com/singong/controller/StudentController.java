@@ -1,10 +1,15 @@
 package com.singong.controller;
 
+import com.singong.dto.StudentCourseDTO;
 import com.singong.dto.StudentDTO;
 import com.singong.dto.StudentExpenseDTO;
+import com.singong.model.Course;
 import com.singong.model.Student;
+import com.singong.model.StudentCourse;
+import com.singong.repository.course.CourseRepository;
 import com.singong.repository.expense.ExpenseRepository;
 import com.singong.repository.student.StudentRepository;
+import com.singong.repository.studentCourse.StudentCourseRepository;
 import com.singong.repository.studentExpense.StudentExpenseRepository;
 import com.singong.repository.studentScholar.StudentScholarRepository;
 import com.singong.service.StudentService;
@@ -25,6 +30,8 @@ public class StudentController {
     private final ExpenseRepository expenseRepository;
     private final StudentExpenseRepository studentExpenseRepository;
     private final StudentScholarRepository studentScholarRepository;
+    private final StudentCourseRepository studentCourseRepository;
+    private final CourseRepository courseRepository;
     private final StudentService studentService;
 
     @PostMapping("/login")
@@ -81,6 +88,22 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
+    @PostMapping("/students/courses")
+    public ResponseEntity<List<StudentCourse>> doneCourses(@RequestBody List<StudentCourseDTO.createStudentCourse> courses) {
+        List<StudentCourse> studentCourses = new ArrayList<>();
+        courses.stream().forEach((x) -> {
+            Student student = studentRepository.getOne(x.getStudentId());
+            Course course = courseRepository.getOne(x.getCourseId());
+            List<StudentCourse> result =
+                    studentCourseRepository.findByStudentIdAndStudentCourseId(x.getStudentId(), x.getCourseId());
+            if (result == null || result.size() == 0) {
+                StudentCourse newStudentCourse = new StudentCourse(student, course);
+                studentCourses.add(studentCourseRepository.save(newStudentCourse));
+            }
+        });
+        return new ResponseEntity<>(studentCourses, HttpStatus.OK);
+    }
+
     @DeleteMapping("/students")
     public ResponseEntity<Boolean> deleteAllStudent() {
         studentRepository.deleteAll();
@@ -92,6 +115,8 @@ public class StudentController {
         studentRepository.deleteById(studentId);
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
+
+
 
     @GetMapping("/students/student/token/{wechatToken}")
     public ResponseEntity<StudentDTO.StudentGet> getAllStudents(@PathVariable("wechatToken") String wechatToken) {
