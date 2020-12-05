@@ -1,18 +1,16 @@
 {
   "pages": [
     "pages/NJM/Login/Login",
+    "pages/NJM/Menu/Menu",
     "pages/staris/page1/page1",
     "pages/staris/page3/page3",
     "pages/staris/test/test",
     "pages/staris/curlist/curlist",
     "pages/staris/index/index",
     "pages/staris/page2/page2",
-    "pages/staris/myinfo/myinfo",
- 
-    "pages/NJM/Menu/Menu",
+    "pages/staris/myinfo/myinfo",    
     "pages/NJM/Register/Register",
     "pages/NJM/Payment/Payment",
-
     "pages/KHJ/index/index",
     "pages/KHJ/register/index",
     "pages/KHJ/history/index",
