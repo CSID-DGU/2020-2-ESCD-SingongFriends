@@ -1,36 +1,47 @@
 /* pages/Curriculum/Curriculum.wxss */
 @import "../lib/common.wxss";
 
-.recommend{
+.recommended{
    font-weight: bold;
+   color: red;
+}
+movable-area {
+  width: 150%;
+  overflow: hidden;
+  font-size: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  position: absolute;
+  left:-50%;
 }
 
-.H-scroll-view{
+
+movable-view {
   white-space: nowrap;
+  width: 200px; 
+  position: relative;
+  left: 9%;
 }
-.H-scroll-item{
-  display: inline-block;
-  width: 100%;
-  height: 100px;
-}
+
 .V-scroll-view{
   height: 250px;
+  align-items:center;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-  align-items:center
 }
 
 .V-scroll-view-mini{
   height: 150px;
+  align-items:center;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .V-scroll-item{
   display: inline-block;
-  height: 40px;
-  width: 10px;
-  text-overflow: ellipsis;
+  height: 30px;
 }
 
 .line{
@@ -44,4 +55,6 @@
 .btn{
   width:100px;
 }
+
+
 

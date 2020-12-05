@@ -5,7 +5,8 @@ App({
     host:"http://localhost:8052/",
     sesid:null,
     studentID:"",
-    language:""
+    language:"",
+    recommend:["System Software", "Basic Programming"],
 },
   setStdentID: function (test) {
     this.studentID = test;

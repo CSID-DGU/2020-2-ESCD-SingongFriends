@@ -1,35 +1,10 @@
 <!--pages/BasicComponents/BasicComponents.wxml-->
-<!-- <view class='section-title'>
-  <text>Button</text>
-</view>
 
-<view class="section">
-  <view class="item-title">Button Type</view>
-  <button type="default" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"
-          disabled="{{disabled}}"> default </button>
-  <button type="primary" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"
-          disabled="{{disabled}}"> primary </button>
-  <button type="warn" size="{{btnSize}}" loading="{{loading}}" plain="{{plain}}"
-          disabled="{{disabled}}"> warn </button>
-</view>
 
-<view class="section">
-  <view class="item-title">Change Property</view>
-  <button bindtap="setSize">Size {{btnSize}}</button>
-  <button bindtap="setDisabled">Disabled {{disabled}}</button>
-  <button bindtap="setPlain">Plain {{plain}}</button>
-  <button bindtap="setLoading">loading {{loading}}</button>
-</view>
- 
- <!-- Image -->
-<!-- <view class="section-title">
-  <text>Image</text>
-</view>  -->
 
-<view class='section'>
-  <view class='item-title'> Mybuttons </view>
+<view class='section' style="margin-top:30%;">
 
-  <button bindtap='department_Info'>학위 소개</button>
+  <button bindtap='department_Info' style="border: 1px solid black;">学位介绍</button>
   <view class="section">
     <view wx:if="{{imgVisible3=='true'}}">
       <block wx:for="{{lengtharr}}">
@@ -42,16 +17,27 @@
   </view>
 
 
-  <button bindtap='image2_show'>학과 소개</button>
-  <view class="section">
-    <view wx:if="{{imgVisible2=='true'}}">
-      Other data...
+  <button bindtap='image2_show' style="border: 1px solid black;">部门介绍</button>
+  <view class="section" style="font-size:12px;">
+    <view wx:if="{{imgVisible2=='true'}}" style="border: 1px solid black;">
+      <view style="font-size:15px;">具有36年传统的计算机课程！<text style="color:orange;"> 东国大学计算机工程专业</text></view>
+      <view style="font-size:13px; color:gray;"><text style="color:red; margin-left:3%;">▶</text>历史路线</view>
+      <view style="margin-left:5%;">– 1971年，第二个计算机部门在韩国成立。</view>
+      <view style="margin-left:5%;">–向IT公司，金融行业，研究机构，国家机构和学术界分发了4000多名校友</view>
+      <view style="font-size:13px; color:gray;"><text style="color:red; margin-left:3%;">▶</text>有才华的导师课程</view>
+      <view style="margin-left:5%;">–通过长期的教育经验来指导学生的职业生涯–通过</view>
+      <view style="margin-left:5%;">热心的导师指导的学习中心，他们通过实用的设计教育进行良好的教学</view>
+      <view style="font-size:13px; color:gray;"><text style="color:red; margin-left:3%;">▶</text>一门可以很好地找到工作的课程</view>
+      <view style="margin-left:5%;">–在NEXT项目的支持下，在国家支持下教育该领域所需的最新软件核心技术</view>
+      <view style="margin-left:5%;">–安装被认可为工程教育创新的高级计算机工程程序</view>
+      <view style="font-size:13px; color:gray;"><text style="color:red; margin-left:3%;">▶</text>适合您的课程</view>
+      <view style="margin-left:5%;"> -东国大学IT系计算机工程专业是提高您的职业生涯的一条明亮之路</view>
     </view>
   </view>
 
-  <button bindtap='image1_show'>이수체계도</button>
+  <button bindtap='image1_show' style="border: 1px solid black;">完成系统</button>
   <view class="section">
-    <view wx:if="{{imgVisible=='true'}}">
+    <view wx:if="{{imgVisible=='true'}}" class="flex justify-center">
       <image src="{{imageUrl_w}}"></image>
     </view>
   </view>

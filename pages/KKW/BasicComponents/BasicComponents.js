@@ -2,8 +2,8 @@
 Page({
 
   data: {
-    arr1: ['공학사(컴퓨터공학 심화)', '공학사', '공학석사(컴퓨터공학)', '공학석사(정보보호)',
-      '교육학석사(컴퓨터교육)', '공학박사(정보보호)', '공학박사(컴퓨터공학)'],
+    arr1: ['工学学士（密集计算机工程）', '工学学士', '工程硕士(计算机科学)', '工程硕士(信息保护)',
+      '教育硕士（计算机教育）', '工程博士(信息保护)', '工程博士(计算机科学)'],
     arr2: [
       'Bachelor of Science in Computer Science and   Engineering',
       'Bachelor of Engineering',
@@ -25,46 +25,7 @@ Page({
 
     imageUrl_w: '/resource/image/1.jpg',
     imageUrl_h: '/resource/image/2.jpg',
-    imageArray: [{
-      mode: 'scaleToFill',
-      text: '너비와 높이가 채우도록 늘어납니다'
-    }, {
-      mode: 'aspectFit',
-      text: '긴면을 완전히 표시.'
-    }, {
-      mode: 'aspectFill',
-      text: '짧은면을 완전히 표시.'
-    }, {
-      mode: 'widthFix',
-      text: '너비에 맞추며 높이는 자동 변경.'
-    }, {
-      mode: 'top',
-      text: '확대하지 말고 상단 표시'
-    }, {
-      mode: 'bottom',
-      text: '확대하지 말고 아래쪽 표시'
-    }, {
-      mode: 'center',
-      text: '확대하지 말고 중간 표시'
-    }, {
-      mode: 'left',
-      text: '확대하지 말고 왼쪽 표시'
-    }, {
-      mode: 'right',
-      text: '확대하지 말고 오른쪽 표시'
-    }, {
-      mode: 'top left',
-      text: '확대하지 말고 왼쪽 상단 표시'
-    }, {
-      mode: 'top right',
-      text: '확대하지 말고 오른쪽 상단 표시'
-    }, {
-      mode: 'bottom left',
-      text: '확대하지 말고 왼쪽 하단 표시'
-    }, {
-      mode: 'bottom right',
-      text: '확대하지 말고 오른쪽 하단 표시'
-    }],
+    
   },
 
   onLoad: function (options) {

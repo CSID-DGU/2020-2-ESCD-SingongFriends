@@ -99,7 +99,7 @@ Page({
 
   goToCurriculum: function() {
     wx.navigateTo({
-      url: '../../KKW/Curriculum/Curriculum',
+      url: '../../KKW/Menu/Menu',
     })
   },
 

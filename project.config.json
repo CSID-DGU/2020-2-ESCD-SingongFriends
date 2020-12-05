@@ -139,6 +139,13 @@
           "id": -1,
           "name": "pages/NJM/Login/Login",
           "pathName": "pages/NJM/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/NJM/Payment/Payment",
+          "pathName": "pages/NJM/Payment/Payment",
           "scene": null
         }
       ]

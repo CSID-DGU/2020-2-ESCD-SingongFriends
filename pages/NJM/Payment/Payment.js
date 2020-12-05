@@ -125,11 +125,14 @@ Page({
          openId:openId
        },
        success: function (res) {
-         console.log(res);
+        // console.log(res);
         console.log(res.data);
-        console.log(res.data.length);
-
-
+        // console.log(res.data.length);
+        console.log(res.data.package);
+        wx.showToast({
+          title: "납부완료",
+          duration: 2000
+        })
        },
        fail: function(res){    console.log(res);  },
        complete: function(res){
@@ -187,6 +190,7 @@ this.ReqRes(url);
   },
 
   goToWechatPay: function () {
+    var that=this;
     // wx.requestPayment({
     //   appId: 'wxd678efh567hg6787 ',
     //   timeStamp: '1490840662',
@@ -197,12 +201,24 @@ this.ReqRes(url);
     //   success (res) { },
     //   fail (res) { }
     // })
-this.pay();
-
-
-
+    wx.showModal({
+      title: "납부하시겠습니까?",
+      cancelText: "취소",
+      confirmText: "확인",
+      success (res) {
+        if (res.confirm) {
+          that.pay();
+          wx.navigateTo({
+            url: '../../staris/page2/page2',
+          })
+        }
+      }
+    })
+    /*
+    this.pay();
     wx.navigateTo({
       url: '../../staris/page2/page2',
     })
+    */
   }
 })

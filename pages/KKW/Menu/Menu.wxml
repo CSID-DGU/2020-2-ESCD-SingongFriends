@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="Menu">
+    <text id="menu">课程菜单</text>
+  </view>
+  <view class="RegisterBtn">
+    <button id="button" bindtap="goToInfo">学术信息</button>
+  </view>
+  <view class="Curriculum">
+    <button id="button" bindtap="goToCurriculum">课程</button>
+  </view>
+</view>
