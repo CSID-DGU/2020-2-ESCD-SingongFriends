@@ -11,7 +11,7 @@
 
     <view class="top-hor-bar"></view>
     <view style="margin-left:24px;display:flex;flex-direction:column">
-      <block wx:for="{{result}}">
+      <block wx:for="{{result20202}}">
       <label style="margin-bottom:1px;font-size:13px"> {{item.fund}} :   {{item.money}} 원</label>
 </block> 
       <!-- <label style="margin-bottom:1px;font-size:13px">학기우수장학금 : 100,000원</label>
