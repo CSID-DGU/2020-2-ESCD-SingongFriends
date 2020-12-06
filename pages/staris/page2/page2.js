@@ -6,32 +6,56 @@ Page({
    * Page initial data
    */
   data: {
- 
     obj: {
       key1: '4,580,000 ',
       key2: '납부완료',
       key3: '2020 1학기 '
-    }
-    ,
-    a:1
+    },
+    a:1,
 
+    select: false,
+    dropdown: "Language",
+
+    message_Notification: "정상적으로 납부 되었습니다. 감사합니다!",
+    message_PayAmount: "납부 금액",
+    message_PaySemester: "납부 학기",
+    message_PayDate: "납부 날짜",
+    message_gotoMenu: "메뉴로 이동"
   },
-go:function(options){
-  wx.navigateTo({
-    url: '../page3/page3',
-  })
-},
+
+  gotoMenu: function (options) {
+    wx.navigateTo({
+      url: '../../NJM/Menu/Menu',
+    })
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log("current language: " + getApp().globalData.language);
+    var that=this
+    that.setData({
+      dropdown: getApp().globalData.language
+    });
 
+    if (that.data.dropdown == "한국어") {
       this.setData({
-       // sesid:app.globalData.sesid
+        message_Notification: "정상적으로 납부 되었습니다. 감사합니다!",
+        message_PayAmount: "납부 금액",
+        message_PaySemester: "납부 학기",
+        message_PayDate: "납부 날짜",
+        message_gotoMenu: "메뉴로 이동"
       })
-    //  console.log("culistid : "+this.data.sesid);
-    //http://119.28.235.170/students
-      var that=this
+    } else if (that.data.dropdown == "中文") {
+      this.setData({
+        message_Notification: "已正常缴纳。 谢谢！",
+        message_PayAmount: "缴款额",
+        message_PaySemester: "缴费学期",
+        message_PayDate: "缴款日期",
+        message_gotoMenu: "移动到菜单"
+      })
+    }
   },
 
   /**
@@ -82,9 +106,43 @@ go:function(options){
   onShareAppMessage: function () {
 
   },
+
   goback:function(){
     wx.navigateBack({
       delta: 0,
     })
+  },
+
+  bindShowMsg() {
+    this.setData({
+        select:!this.data.select
+    })
+  },
+
+  mySelect(e) {
+    var name = e.currentTarget.dataset.name
+    getApp().globalData.language = name
+    this.setData({
+        dropdown: name,
+        select: false
+    })
+
+    if (name == "한국어") {
+      this.setData({
+        message_Notification: "정상적으로 납부 되었습니다. 감사합니다!",
+        message_PayAmount: "납부 금액",
+        message_PaySemester: "납부 학기",
+        message_PayDate: "납부 날짜",
+        message_gotoMenu: "메뉴로 이동"
+      })
+    } else if (name == "中文") {
+      this.setData({
+        message_Notification: "已正常缴纳。 谢谢！",
+        message_PayAmount: "缴款额",
+        message_PaySemester: "缴费学期",
+        message_PayDate: "缴款日期",
+        message_gotoMenu: "移动到菜单"
+      })
+    }
   }
 })

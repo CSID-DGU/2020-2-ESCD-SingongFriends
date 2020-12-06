@@ -1,11 +1,18 @@
 
 <view class="container">
-<view class="ctrtext" id="ctr" bindtap="gopage2">납부 내역</view><!--缴款明细-->
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
+  <view class="ctrtext" id="ctr" bindtap="gopage2">{{message_Receipt}}</view><!--缴款明细-->
+
+  <block wx:for="{{result}}">
+      <view class="ctrtext">
+        <text>{{message_Amount}}:  {{item.amountBeforeReduction}}  {{semester_view[index]}}{{message_Semester}} </text><!--款子,    学期   -->
+        <text id="state">{{message_Complete}}</text><!--交卷完毕-->
+      </view>
+  </block>
 </view>
-<block wx:for="{{result}}">
-<view class="container">
-  <view class="ctrtext">
-  <text>금액:  {{item.amountBeforeReduction}}  {{semester_view[index]}}학기 </text><!--款子,    学期   -->
-  <text id="state">제출완료</text><!--交卷完毕-->
-</view></view>
-</block> 

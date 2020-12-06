@@ -1,14 +1,24 @@
-
-
 <view class="container">
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
+
   <view id="logotxt">Notification</view>
-  <view class="ctrtext">정상적으로 납부 되었습니다. 감사합니다!</view><!--已正常缴纳。 谢谢。-->
+  <view class="ctrtext">{{message_Notification}}</view><!--已正常缴纳。 谢谢。-->
 
   <block>
     <view class="ctrtext2"  bindtap="go">
-      <text >납부 금액 :</text><text class="cost"> {{obj.key1}}\n\n</text><!--缴款额-->
-      <text >납부 학기 : </text> <text class="semester"> {{obj.key2}}\n\n</text><!--缴费学期-->
-      <text class="state">납부 날짜 : {{obj.key3}} </text><!--缴款日期-->
+      <text >{{message_PayAmount}} :</text><text class="cost"> {{obj.key1}}\n\n</text><!--缴款额-->
+      <text >{{message_PaySemester}} : </text> <text class="semester"> {{obj.key2}}\n\n</text><!--缴费学期-->
+      <text class="state">{{message_PayDate}} : {{obj.key3}} </text><!--缴款日期-->
     </view>
   </block>
+
+  <view class="goToMenu">
+    <button id="gotoMenu" bindtap="gotoMenu" style="color:#fff">{{message_gotoMenu}}</button>
+  </view>
 </view>

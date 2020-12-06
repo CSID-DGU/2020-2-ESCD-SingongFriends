@@ -40,11 +40,16 @@ Page({
     a:3,
     b:2,
     arobj:[],
-    result:[]
-    
-    
+    result:[],
+
+    select: false,
+    dropdown: "Language",
+
+    message_Receipt: "납부내역",
+    message_Amount: "금액",
+    message_Semester: "학기",
+    message_Complete: "납부 완료"
   },
-  
 
   getOpenid:function(){
     var url="https://api.weixin.qq.com/sns/jscode2session";
@@ -59,15 +64,13 @@ Page({
          secret:"73c38d218a25bd2399786e99dc55486a",
          js_code: this.data.code,
           grant_type: 'authorization_code'
-
        },
        success: function (res) {
         console.log(res.data);
          console.log("openid: " + res.data.openid);
         that.setData({
           openId:res.data.openid,
-        })
-   
+        })   
        },
        fail: function(res){    console.log(res);  },
        complete: function(res){
@@ -75,8 +78,7 @@ Page({
        }
      });
   },
-  pay:function(url){
-  },
+
   ReqRes:function(url,i){
     var that=this
     wx.request({// 'http://staris.freehongs.net/web/androidtest.do'
@@ -133,31 +135,50 @@ Page({
                   break;
                   default:
                     break;
-
         }
         res.data.amountBeforeReduction=newstr;
         console.log(res.data.amountBeforeReduction+"g");
-       that.data.arobj.push(res.data);
-       //that.data.arobj.push(JSON.stringify(res.data));
+        that.data.arobj.push(res.data);
+        //that.data.arobj.push(JSON.stringify(res.data));
 
-       that.setData({
-         result:that.data.arobj,
-       })
+        that.setData({
+          result:that.data.arobj,
+        })
       },
       fail: function(res){
 
-        },
+      },
       complete: function(){
 
       }
-    });
-    
+    });    
   },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var that=this;
+    console.log("current language: " + getApp().globalData.language);
+    var that=this
+    that.setData({
+      dropdown: getApp().globalData.language
+    });
+
+    if (that.data.dropdown == "한국어") {
+      this.setData({
+        message_Receipt: "납부내역",
+        message_Amount: "금액",
+        message_Semester: "학기",
+        message_Complete: "납부 완료"
+      })
+    } else if (that.data.dropdown == "中文") {
+      this.setData({
+        message_Receipt: "缴款明细",
+        message_Amount: "款子",
+        message_Semester: "学期",
+        message_Complete: "缴讫"
+      })
+    }
+
     wx.login({
       success (res) {
        console.log("jscode : "+res.code)
@@ -180,18 +201,16 @@ Page({
      var k=this.data.result;
     // var k=JSON.stringify(res.data)
 
-     for(var i=0;i<len;i++){
+     for(var i=0;i<len;i++) {
        console.log(k[i]);
      }
-
-
-
-   
   },
-  go:function(){
-console.log("늉");
+
+  go:function() {
+  console.log("늉");
   },
-  gopage2:function(){
+
+  gopage2:function() {
     wx.navigateTo({
       url: '../page2/page2',
     })
@@ -244,5 +263,36 @@ console.log("늉");
    */
   onShareAppMessage: function () {
 
+  },
+
+  bindShowMsg() {
+    this.setData({
+        select:!this.data.select
+    })
+  },
+
+  mySelect(e) {
+    var name = e.currentTarget.dataset.name
+    getApp().globalData.language = name
+    this.setData({
+        dropdown: name,
+        select: false
+    })
+
+    if (name == "한국어") {
+      this.setData({
+        message_Receipt: "납부내역",
+        message_Amount: "금액",
+        message_Semester: "학기",
+        message_Complete: "납부 완료"
+      })
+    } else if (name == "中文") {
+      this.setData({
+        message_Receipt: "缴款明细",
+        message_Amount: "款子",
+        message_Semester: "学期",
+        message_Complete: "缴讫"
+      })
+    }
   }
 })

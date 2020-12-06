@@ -3,42 +3,20 @@
     "pages/NJM/Login/Login",
     "pages/NJM/Menu/Menu",
     "pages/staris/page1/page1",
-    "pages/staris/page3/page3",
-    "pages/staris/test/test",
-    "pages/staris/curlist/curlist",
-    "pages/staris/index/index",
     "pages/staris/page2/page2",
-    "pages/staris/myinfo/myinfo",
     "pages/NJM/Register/Register",
     "pages/NJM/Payment/Payment",
-    "pages/KHJ/index/index",
-    "pages/KHJ/register/index",
-    "pages/KHJ/history/index",
-    "pages/KHJ/logs/logs",
     "pages/KKW/Curriculum/Curriculum",
     "pages/KKW/BasicComponents/BasicComponents",
-    "pages/KKW/index/index",
-    "pages/KKW/test/test",
     "pages/KKW/Menu/Menu",
     "pages/NJM/Scholarship/Scholarship"
   ],
+
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F3721C",
-    "navigationBarTitleText": "신공프렌즈",
+    "navigationBarTitleText": "SingongFriends",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/staris/index/index",
-        "text": "home"
-      },
-      {
-        "pagePath": "pages/staris/myinfo/myinfo",
-        "text": "2번 패이지"
-      }
-    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

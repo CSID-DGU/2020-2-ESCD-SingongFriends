@@ -1,7 +1,0 @@
-<!--pages/myinfo/myinfo.wxml-->
-<text>MyInfo</text>
-<button open-type="getUserInfo" bindgetuserinfo="myGetFunc" >{{btText}}</button>
-<!--js의 값 가져오기 = {{}}-->
-<!--getUserInfo 이미 있는 메서드인듯...그걸 그냥 내 함수 myGetFunc로 쓸께!-->
-<text>닉네임 : {{userinfo.nickName}}</text>
-<button bindtap="goHome">goHome</button>

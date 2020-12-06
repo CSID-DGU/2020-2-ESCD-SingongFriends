@@ -105,7 +105,7 @@ Page({
 
   goToScholarship: function() {
     wx.navigateTo({
-      url: '../../KHJ/history/index',
+      url: '../Scholarship/Scholarship',
     })
   },
 

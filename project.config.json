@@ -114,6 +114,12 @@
           "pathName": "pages/NJM/Scholarship/Scholarship",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/KKW/Menu/Menu",
+          "pathName": "pages/KKW/Menu/Menu",
+          "query": "",
+          "scene": null
         }
       ]
     }

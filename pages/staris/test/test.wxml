@@ -1,6 +1,0 @@
-<!--pages/test/test.wxml-->
-
-<view bindtap="curlist">커리큘럼 리스트 띄우기</view>
-<view bindtap="manage">학비 수납 하기</view>
-<view bindtap="gotopage2"></view>
-<view bindtap="gotopage2"></view>
