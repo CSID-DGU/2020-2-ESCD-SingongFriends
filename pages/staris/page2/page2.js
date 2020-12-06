@@ -18,7 +18,7 @@ Page({
     message_Notification: "정상적으로 납부 되었습니다. 감사합니다!",
     message_PayAmount: "납부 금액",
     message_PaySemester: "납부 학기",
-    message_PayDate: "납부 날짜",
+    message_PayCondition: "납부 상태",
     message_gotoMenu: "메뉴로 이동"
   },
 
@@ -47,7 +47,7 @@ Page({
         message_Notification: "정상적으로 납부 되었습니다. 감사합니다!",
         message_PayAmount: "납부 금액",
         message_PaySemester: "납부 학기",
-        message_PayDate: "납부 날짜",
+        message_PayCondition: "납부 상태",
         message_gotoMenu: "메뉴로 이동",
         state:"납부 완료"
       })
@@ -56,7 +56,7 @@ Page({
         message_Notification: "已正常缴纳。 谢谢！",
         message_PayAmount: "缴款额",
         message_PaySemester: "缴费学期",
-        message_PayDate: "缴款日期",
+        message_PayCondition: "缴款情况。",
         message_gotoMenu: "移动到菜单"
         ,state:"缴讫"
       })
@@ -137,17 +137,18 @@ Page({
         message_Notification: "정상적으로 납부 되었습니다. 감사합니다!",
         message_PayAmount: "납부 금액",
         message_PaySemester: "납부 학기",
-        message_PayDate: "납부 날짜",
-        message_gotoMenu: "메뉴로 이동"
+        message_PayCondition: "납부 상태",
+        message_gotoMenu: "메뉴로 이동",
+        state: "납부 완료"
       })
     } else if (name == "中文") {
       this.setData({
         message_Notification: "已正常缴纳。 谢谢！",
         message_PayAmount: "缴款额",
         message_PaySemester: "缴费学期",
-        message_PayDate: "缴款日期",
-        message_gotoMenu: "移动到菜单"
-        ,state:"缴讫"
+        message_PayCondition: "缴款情况。",
+        message_gotoMenu: "移动到菜单",
+        state:"缴讫"
       })
     }
   }
