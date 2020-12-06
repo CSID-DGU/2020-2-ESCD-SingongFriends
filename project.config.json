@@ -21,16 +21,18 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "useIsolateContext": true,
-    "useCompilerModule": false,
+    "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true
+    "packNpmManually": false,
+    "packNpmRelationList": []
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
@@ -44,6 +46,14 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
     "plugin": {
       "list": []
     },
@@ -98,27 +108,9 @@
           "scene": null
         },
         {
-          "name": "pages/NJM/Register/Register",
-          "pathName": "pages/NJM/Register/Register",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Menu/Menu",
-          "pathName": "pages/NJM/Menu/Menu",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Scholarship/Scholarship",
-          "pathName": "pages/NJM/Scholarship/Scholarship",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/KKW/Menu/Menu",
-          "pathName": "pages/KKW/Menu/Menu",
-          "query": "",
+          "id": -1,
+          "name": "pages/staris/page2/page2",
+          "pathName": "pages/staris/page2/page2",
           "scene": null
         }
       ]

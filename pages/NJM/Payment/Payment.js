@@ -240,7 +240,7 @@ Page({
         // console.log(res.data.length);
         console.log(res.data.package);
         wx.navigateTo({
-          url: '../../staris/page2/page2',
+          url: '../../staris/page2/page2?v='+that.data.pay3,
         })
         if (that.data.dropdown == "中文") {
           wx.showToast({

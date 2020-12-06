@@ -6,11 +6,10 @@ Page({
    * Page initial data
    */
   data: {
-    obj: {
-      key1: '4,580,000 ',
-      key2: '납부완료',
-      key3: '2020 1학기 '
-    },
+    goji:"",
+    state:"납부 완료",
+    semester:"2020 - 2",
+ 
     a:1,
 
     select: false,
@@ -33,6 +32,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+  
+    this.setData({
+      goji:options.v
+    })
     console.log("current language: " + getApp().globalData.language);
     var that=this
     that.setData({
@@ -45,7 +48,8 @@ Page({
         message_PayAmount: "납부 금액",
         message_PaySemester: "납부 학기",
         message_PayDate: "납부 날짜",
-        message_gotoMenu: "메뉴로 이동"
+        message_gotoMenu: "메뉴로 이동",
+        state:"납부 완료"
       })
     } else if (that.data.dropdown == "中文") {
       this.setData({
@@ -54,6 +58,7 @@ Page({
         message_PaySemester: "缴费学期",
         message_PayDate: "缴款日期",
         message_gotoMenu: "移动到菜单"
+        ,state:"缴讫"
       })
     }
   },
@@ -142,6 +147,7 @@ Page({
         message_PaySemester: "缴费学期",
         message_PayDate: "缴款日期",
         message_gotoMenu: "移动到菜单"
+        ,state:"缴讫"
       })
     }
   }

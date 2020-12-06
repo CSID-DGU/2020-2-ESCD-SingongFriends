@@ -12,9 +12,9 @@
 
   <block>
     <view class="ctrtext2"  bindtap="go">
-      <text >{{message_PayAmount}} :</text><text class="cost"> {{obj.key1}}\n\n</text><!--缴款额-->
-      <text >{{message_PaySemester}} : </text> <text class="semester"> {{obj.key2}}\n\n</text><!--缴费学期-->
-      <text class="state">{{message_PayDate}} : {{obj.key3}} </text><!--缴款日期-->
+      <text >{{message_PayAmount}} :</text><text class="cost"> {{goji}}\n\n</text><!--缴款额-->
+      <text >{{message_PaySemester}} : </text> <text class="semester"> {{semester}}\n\n</text><!--缴费学期-->
+      <text class="state">{{message_PayDate}} : {{state}} </text><!--缴款日期-->
     </view>
   </block>
 
