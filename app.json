@@ -9,7 +9,6 @@
     "pages/staris/index/index",
     "pages/staris/page2/page2",
     "pages/staris/myinfo/myinfo",
-
     "pages/NJM/Register/Register",
     "pages/NJM/Payment/Payment",
     "pages/KHJ/index/index",
@@ -20,7 +19,8 @@
     "pages/KKW/BasicComponents/BasicComponents",
     "pages/KKW/index/index",
     "pages/KKW/test/test",
-    "pages/KKW/Menu/Menu"
+    "pages/KKW/Menu/Menu",
+    "pages/NJM/Scholarship/Scholarship"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,7 +28,6 @@
     "navigationBarTitleText": "신공프렌즈",
     "navigationBarTextStyle": "black"
   },
-
   "tabBar": {
     "list": [
       {
@@ -41,8 +40,6 @@
       }
     ]
   },
-  
-
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

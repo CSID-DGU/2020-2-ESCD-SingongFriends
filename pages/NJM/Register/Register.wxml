@@ -1,16 +1,23 @@
 <!--index.wxml-->
 <view class="container">
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
   <view class="Register">
-    <text id="register">등록</text>
+    <text id="register">{{message_Register}}</text>
   </view>
   <view class="Register_btn">
     <view class="Bill" style="float: left; width: 48%; padding-right: 5px">
       <button id="button" bindtap="goToPayment"><image src="/resource/bill.png" id="image"></image></button>
-      <text>고지서</text>
+      <text>{{message_Bill}}</text>
     </view>
     <view class="Receipt" style="float: right; width: 48%; padding-left: 5px">
       <button id="button" bindtap="goPayList"><image src="/resource/receipt.png" id="image"></image></button>
-      <text>납부내역</text>
+      <text>{{message_Receipt}}</text>
     </view>
   </view>
 </view>

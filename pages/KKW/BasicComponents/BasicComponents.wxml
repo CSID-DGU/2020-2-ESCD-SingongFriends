@@ -1,21 +1,17 @@
 <!--pages/BasicComponents/BasicComponents.wxml-->
-
-
-
-<view class='section' style="margin-top:30%;">
+<view class='section' style="margin-top:20%;">
 
   <button bindtap='department_Info' style="border: 1px solid black;">学位介绍</button>
   <view class="section">
     <view wx:if="{{imgVisible3=='true'}}">
       <block wx:for="{{lengtharr}}">
         <view class="flex justify-center">
-          <view class="basis-40per bg-whitesmoke padding-sm degreeStyle">{{arr1[index]}}</view>
-          <view class="basis-40per bg-whitesmoke padding-sm degreeStyle">{{arr2[index]}}</view>
+          <view class="basis-50per bg-whitesmoke padding-sm degreeStyle">{{arr1[index]}}</view>
+          <view class="basis-50per bg-whitesmoke padding-sm degreeStyle">{{arr2[index]}}</view>
         </view>
       </block>
     </view>
   </view>
-
 
   <button bindtap='image2_show' style="border: 1px solid black;">部门介绍</button>
   <view class="section" style="font-size:12px;">

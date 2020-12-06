@@ -8,12 +8,14 @@
 <view calss='section'>
   <view class="flex justify-center">
     <view class="basis-60per bg-orange flex justify-center titleFont">课程未选</view>
+    <!-- 课程未选 미이수과목 -->
   </view>
   <view class='section'>
     <view class="line"></view>
   </view>
-  <view class="flex justify-right" style="color: red; font-size:80%; margin-bottom:1%;">
+  <view class="flex justify-right" style="color: red; font-size:80%; margin-left:60%; margin-bottom:1%;">
     ※红色是推荐路线※
+    <!-- ※빨간색은 추천 과목입니다※ -->
   </view>
   <view></view>
 
@@ -89,6 +91,7 @@
 <view class='section'>
   <view class="flex justify-center">
     <view class="basis-60per bg-gray flex justify-center titleFont">已采取学科</view>
+    <!-- 已采取学科 이수과목 -->
   </view>
   <view class='section'>
     <view class="line"></view>

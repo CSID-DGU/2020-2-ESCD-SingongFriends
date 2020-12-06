@@ -1,4 +1,3 @@
-const app = getApp()
 Page({
   data: {
     btnSize: 2,
@@ -32,23 +31,12 @@ Page({
       method: 'GET',
       success: function (res) {
         // console.log(JSON.stringify(res))   
-         console.log(res.data)
-
+        // console.log(res.data.done.length)
        that.setData({ 
         // students: res.data,
         doneCourses: that.doneCourses=res.data.done,
         undoneCourses: that.undoneCourses=res.data.undone,
       })
-      console.log(that.undoneCourses)
-        // for(var i in that.undoneCourses){
-        //   var p=Math.floor(Math.random()*5);
-        //   if(p%2==0){
-        //     that.undoneCourses[i].recommended= true;
-        //   }
-        //   else{
-        //     that.undoneCourses[i].recommended= false;
-        //   }
-        // }
         for(var i in that.undoneCourses){
           var p=Math.floor(Math.random()*5);
           if(p%2==0){

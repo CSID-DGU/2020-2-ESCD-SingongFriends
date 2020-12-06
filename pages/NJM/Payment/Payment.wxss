@@ -1,5 +1,5 @@
 .Bill {
-  margin: 40px 0 10px 0;
+  margin: 70px 0 10px 0;
   width: 80%;
   padding: 12px 0 12px 0;
   text-align: center;
@@ -103,4 +103,43 @@
   margin: 10px 0 10px 0;
   background-color: #BFBFBF;
   width: 100%;
+}
+
+.select_box {
+  background-color: #eee;
+  width: 24%;
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+  animation: myfirst 0.5s;
+  margin-left: 34%;
+}
+
+@keyframes myfirst {
+  from {
+      height: 0px;
+  }
+  to {
+      height: 52px;
+  }
+}
+
+.select_one {
+  height: 25px;
+  line-height: 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+.list-msg2 {
+  margin-top: 10px;
+  width: 24%;
+  text-align: center;
+  height: 23px;
+  border: 1px solid #ccc;
+  margin-left: 34%;
+  position: absolute;
+  background-color: white;
+  padding-top: 5px;
 }

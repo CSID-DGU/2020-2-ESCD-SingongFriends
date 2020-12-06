@@ -2,11 +2,14 @@
 <view class="container">
   <view class="Menu">
     <text id="menu">课程菜单</text>
+    <!-- 课程菜单 이수과정 -->
   </view>
   <view class="RegisterBtn">
     <button id="button" bindtap="goToInfo">学术信息</button>
+    <!-- 学术信息 학과소개 -->
   </view>
   <view class="Curriculum">
     <button id="button" bindtap="goToCurriculum">课程</button>
+    <!-- 课程 커리큘럼 -->
   </view>
 </view>

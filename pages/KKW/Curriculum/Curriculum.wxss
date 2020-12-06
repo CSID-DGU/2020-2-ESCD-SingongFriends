@@ -20,9 +20,8 @@ movable-area {
 
 movable-view {
   white-space: nowrap;
-  width: 200px; 
+  width: 200rpx; 
   position: relative;
-  left: 9%;
 }
 
 .V-scroll-view{

@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="Scholarship">
+    <text id="scholarship">장학</text>
+  </view>
+
+  <block wx:for="{{semester_view}}">
+    <view class="semester_btn">
+      <button bindtap='image2_show' style="border: 1px solid black;">{{semester_view[index]}}</button>
+    </view>
+  </block>
+
+</view>
