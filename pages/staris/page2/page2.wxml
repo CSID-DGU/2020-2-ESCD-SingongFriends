@@ -1,15 +1,14 @@
-<!--pages/page2/page2.wxml-->
-<!--ifelse로 처리해야할듯-->
+
 
 <view class="container">
   <view id="logotxt">Notification</view>
-  <view class="ctrtext">정상적으로 납부 되었습니다. 감사합니다!</view>
+  <view class="ctrtext">정상적으로 납부 되었습니다. 감사합니다!</view><!--已正常缴纳。 谢谢。-->
 
   <block>
     <view class="ctrtext2"  bindtap="go">
-      <text >납부 금액 :</text><text class="cost"> {{obj.key1}}\n\n</text>
-      <text >납부 학기 : </text> <text class="semester"> {{obj.key2}}\n\n</text>
-      <text class="state">납부 날짜 : {{obj.key3}} </text>
+      <text >납부 금액 :</text><text class="cost"> {{obj.key1}}\n\n</text><!--缴款额-->
+      <text >납부 학기 : </text> <text class="semester"> {{obj.key2}}\n\n</text><!--缴费学期-->
+      <text class="state">납부 날짜 : {{obj.key3}} </text><!--缴款日期-->
     </view>
   </block>
 </view>

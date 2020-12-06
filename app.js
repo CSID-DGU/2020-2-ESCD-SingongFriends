@@ -6,7 +6,6 @@ App({
     sesid:null,
     studentID:"",
     language:"",
-    recommend:["System Software", "Basic Programming"],
 },
   setStdentID: function (test) {
     this.studentID = test;

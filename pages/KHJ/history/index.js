@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    semester:[20192,20201,20202],
     motto: '으 중국프로그램 너무싫다;',
     userInfo: {},
     hasUserInfo: false,
@@ -16,7 +17,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  ReqRes:function(url){
+  ReqRes:function(url,sem){
     var that=this
     wx.request({// 'http://staris.freehongs.net/web/androidtest.do'
      //
@@ -31,8 +32,10 @@ Page({
        });
        var r=that.data.result;
        console.log(r.length);
+       console.log(r);
        for(var i=0;i<r.length;i++){
-console.log(r[i].money.toString().length);
+        if(r[i].semester==sem){
+          console.log(r[i].money.toString().length);
 var len=r[i].money.toString().length;
 var newstr="";
 var strmoney=r[i].money.toString()
@@ -73,18 +76,31 @@ switch(len){
             break;
 }
 r[i].money=newstr;
+that.setData({
+  result:r
+})
+        }
+        else{
+          r.pop(i)
+          that.setData({
+            result:r
+          })
+        }
        }
-       that.setData({
-         result:r
-       })
+
       },
       fail: function(res){ },
       complete: function(){ }
     });
   },
+  selectSemester:function(){
+    var sem=""
+    var url="http://119.28.235.170/student-scholars/"+app.globalData.studentID
+    this.ReqRes(url,sem)
+  },
   onLoad: function () {
 var url="http://119.28.235.170/student-scholars/"+app.globalData.studentID// 아이디 불러와서 지정해야함 
-this.ReqRes(url);
+this.ReqRes(url,"20201");
 
 
     if (app.globalData.userInfo) {

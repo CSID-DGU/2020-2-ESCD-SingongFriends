@@ -1,43 +1,11 @@
-<!--pages/syntax/syntax.wxml-->
-
-<!--<view>{{ar[1]}}</view>-->
-<!-- <block wx:for="{{ar}}">
-  <view> {{index}} => </view>
-  <view> {{item}} </view>
-</block> -->
-<!-- 
-<block wx:for="{{arobj}}">
-  <view> {{index}} => </view>
-  <view> {{item}} </view>
-  <view> {{item.key3}} </view>
-</block> -->
-
 
 <view class="container">
-<view class="ctrtext" id="ctr" bindtap="gopage2">납부 내역</view>
+<view class="ctrtext" id="ctr" bindtap="gopage2">납부 내역</view><!--缴款明细-->
 </view>
-<!-- <block>
-  <view class="ctrtext"  bindtap="go">
-    <text class="cost">{{object.key1}}</text>
-    <text class="semester"> {{object.key3}}</text>
-    <text class="state">({{object.key2}}) </text>
-  </view>
-</block> -->
-<!-- <view>{{result}}</view> -->
 <block wx:for="{{result}}">
-  <!-- <view> {{index}} => </view>
-  <view> {{item}} </view> -->
 <view class="container">
-
   <view class="ctrtext">
-  <text> {{item.amountBeforeReduction}}원  {{semester_view[index]}}학기 </text>
-  <text id="state">제출완료</text>
+  <text>금액:  {{item.amountBeforeReduction}}  {{semester_view[index]}}학기 </text><!--款子,    学期   -->
+  <text id="state">제출완료</text><!--交卷完毕-->
 </view></view>
 </block> 
-<!-- 
-<view class="container">
-
-<view class="ctrtext">
-<text> {{amountBeforeReduction}}원  {{semester}}학기 </text>
-<text id="state">{{studentExpenseId}}</text>
-</view></view> -->
