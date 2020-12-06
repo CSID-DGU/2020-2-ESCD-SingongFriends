@@ -1,7 +1,16 @@
 <!--pages/BasicComponents/BasicComponents.wxml-->
-<view class='section' style="margin-top:20%;">
+<view class="container">
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
+</view>
 
-  <button bindtap='department_Info' style="border: 1px solid black;">学位介绍</button>
+<view class='section' style="margin-top:20%;">
+  <button bindtap='department_Info' style="border: 1px solid black;">{{message_btn1}}</button>
   <view class="section">
     <view wx:if="{{imgVisible3=='true'}}">
       <block wx:for="{{lengtharr}}">
@@ -13,7 +22,7 @@
     </view>
   </view>
 
-  <button bindtap='image2_show' style="border: 1px solid black;">部门介绍</button>
+  <button bindtap='image2_show' style="border: 1px solid black;">{{message_btn2}}</button>
   <view class="section" style="font-size:12px;">
     <view wx:if="{{imgVisible2=='true'}}" style="border: 1px solid black;">
       <view style="font-size:15px;">具有36年传统的计算机课程！<text style="color:orange;"> 东国大学计算机工程专业</text></view>
@@ -31,7 +40,7 @@
     </view>
   </view>
 
-  <button bindtap='image1_show' style="border: 1px solid black;">完成系统</button>
+  <button bindtap='image1_show' style="border: 1px solid black;">{{message_btn3}}</button>
   <view class="section">
     <view wx:if="{{imgVisible=='true'}}" class="flex justify-center">
       <image src="{{imageUrl_w}}"></image>

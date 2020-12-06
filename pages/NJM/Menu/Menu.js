@@ -1,10 +1,6 @@
 // pages/Menu/Menu.js
 const app = getApp()
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
     select: false,
     dropdown: "Language",

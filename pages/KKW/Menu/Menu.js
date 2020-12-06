@@ -1,18 +1,37 @@
 // pages/Menu/Menu.js
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
+    select: false,
+    dropdown: "Language",
 
+    message_Curriculum1: "이수과정",
+    message_Introduction: "학과 소개",
+    message_Curriculum2: "커리큘럼"
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log("current language: " + getApp().globalData.language);
+    var that=this
+    that.setData({
+      dropdown: getApp().globalData.language
+    });
 
+    if (that.data.dropdown == "한국어") {
+      this.setData({
+        message_Curriculum1: "이수과정",
+        message_Introduction: "학과 소개",
+        message_Curriculum2: "커리큘럼"
+      })
+    } else if (that.data.dropdown == "中文") {
+      this.setData({
+        message_Curriculum1: "课程菜单",
+        message_Introduction: "学术信息",
+        message_Curriculum2: "课程"
+      })
+    }
   },
 
   /**
@@ -75,5 +94,34 @@ Page({
       url: '../Curriculum/Curriculum',
     })
   },
+
+  bindShowMsg() {
+    this.setData({
+        select:!this.data.select
+    })
+  },
+
+  mySelect(e) {
+    var name = e.currentTarget.dataset.name
+    getApp().globalData.language = name
+    this.setData({
+        dropdown: name,
+        select: false
+    })
+
+    if (name == "한국어") {
+      this.setData({
+        message_Curriculum1: "이수과정",
+        message_Introduction: "학과 소개",
+        message_Curriculum2: "커리큘럼"
+      })
+    } else if (name == "中文") {
+      this.setData({
+        message_Curriculum1: "课程菜单",
+        message_Introduction: "学术信息",
+        message_Curriculum2: "课程"
+      })
+    }
+  }
 })
 
