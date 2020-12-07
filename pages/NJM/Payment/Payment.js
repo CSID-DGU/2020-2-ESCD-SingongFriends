@@ -10,6 +10,7 @@ Page({
     pay1:4580000,
     pay2:"",
     pay3:"",
+    payment:0,
 
     select: false,
     dropdown: "Language",
@@ -130,10 +131,11 @@ Page({
          newstr=that.returnswitch(stramount);
         console.log("goji : "+goji);
        that.setData({
-        
+        payment:goji,
          pay3:newstr,
        //  pay3:goji
        })
+       console.log(that.data.payment)
        console.log(that.data.pay+that.data.pay2+that.data.pay3);
       },
       fail: function(res){
@@ -268,8 +270,66 @@ Page({
         }
        },
        complete: function(res){
-        console.log(res);
-       }
+
+console.log(that.data.payment)
+var PAYMENT=that.data.payment;
+console.log(PAYMENT)
+var expenseId=0
+wx.request({
+      url:"http://119.28.235.170/expenses",
+       method:'POST',
+       data:JSON.stringify([{"amountMoney":PAYMENT}])
+       ,
+       success: function (res) {      console.log(res)     },
+       fail: function(res){   
+         console.log(res)
+           },
+       complete: function(res){   
+         console.log(that.data.payment)
+        wx.request({
+          url:"http://119.28.235.170/expenses",
+           method: 'GET',
+           data:{
+
+           },
+           success: function (res) {    
+              
+             //console.log(res.data[res.data.length-1])
+             expenseId=res.data[res.data.length-1].expenseId
+
+             console.log("eid: "+expenseId)
+
+             },
+           fail: function(res){       },
+           complete: function(res){  
+            wx.request({
+              url:"http://119.28.235.170/student-expenses",
+               method: 'POST',
+               data:JSON.stringify([{
+                 "expenseId": expenseId,
+               "semester": 20202,
+               "studentId": app.globalData.studentID}]),
+
+               success: function (res) {    
+                  
+                 console.log(res)
+    
+    
+                 
+                 },
+               fail: function(res){       },
+               complete: function(res){       }
+             });
+
+
+                }
+         });
+
+
+           }
+     });
+       
+    }
      });
   },
 
@@ -338,7 +398,32 @@ this.ReqRes(url);
         title: "确定要缴纳吗？",
         success (res) {
           if (res.confirm) {
-            that.pay();
+
+
+            wx.request({
+              url:"http://119.28.235.170/students/student/"+app.globalData.studentID+"/student-expenses/semester/20181",
+               method: 'GET',
+               data:{},
+               success: function (res) {    
+                console.log(res.data.length)
+                  if(res.data.length!=0){
+console.log("이미 납부했어")
+wx.showModal({
+  title: "이미 납부 하셨습니다",
+  cancelText:"",
+  confirmText: "확인"
+})
+                  }else{
+                    that.pay();
+                  }
+
+                 },
+               fail: function(res){       },
+               complete: function(res){ 
+            //that.pay();
+                  }
+             });
+      
           }
         }
       })
@@ -349,7 +434,32 @@ this.ReqRes(url);
         confirmText: "확인",
         success (res) {
           if (res.confirm) {
-            that.pay();
+
+            wx.request({
+              url:"http://119.28.235.170/students/student/"+app.globalData.studentID+"/student-expenses/semester/20202",
+               method: 'GET',
+               data:{},
+               success: function (res) {    
+                console.log(res.data.length)
+                  if(res.data.length!=0){
+
+  console.log("이미 납부했어")
+  wx.showModal({
+    title: "이미 납부 하셨습니다",
+    cancelText:"",
+    confirmText: "확인"
+  })
+                  }else{
+                    that.pay();
+                  }
+
+                 },
+               fail: function(res){       },
+               complete: function(res){ 
+            //that.pay();
+                  }
+             });
+
           }
         }
       })

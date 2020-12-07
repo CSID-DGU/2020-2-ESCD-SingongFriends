@@ -1,3 +1,4 @@
+const app=getApp()
 Page({
   data: {
     btnSize: 2,
@@ -31,8 +32,11 @@ Page({
   
     var that=this
     wx.request({
-     url:'http://119.28.235.170/student-courses',
+     url:'http://119.28.235.170/student-courses/'+app.globalData.studentID,
       method: 'GET',
+      // data:{
+      //   studentId:app.globalData.studentID
+      // },
       success: function (res) {
         // console.log(JSON.stringify(res))   
         // console.log(res.data.done.length)
