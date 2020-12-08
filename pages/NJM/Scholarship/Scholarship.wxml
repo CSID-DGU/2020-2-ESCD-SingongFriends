@@ -4,6 +4,7 @@
   <view class='list-msg2' bindtap='bindShowMsg'>
       <text>{{dropdown}}</text>
   </view>
+
   <view class="select_box" wx:if="{{select}}">
       <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
       <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
@@ -14,6 +15,7 @@
 
   <view class="Semester_btn">
 
+    <view wx:if="{{result20192.length!=0}}">
     <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[0]}}</button>
     <view class="Instructions">
       <textarea disabled="true" id="instructions">
@@ -24,10 +26,11 @@
         <view></view>
       </textarea>
     </view>
-    </view>
+    </view></view>
     
 <view class="Semester_btn">
 
+  <view wx:if="{{result20201.length!=0}}">
 <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[1]}}</button>
 <view class="Instructions">
   <textarea disabled="true" id="instructions">
@@ -39,8 +42,10 @@
   </textarea>
 </view>
 </view>
+</view>
 <view class="Semester_btn">
 
+  <view wx:if="{{result20202.length!=0}}">
 <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[2]}}</button>
 <view class="Instructions">
   <textarea disabled="true" id="instructions">
@@ -50,6 +55,7 @@
 
     <view></view>
   </textarea>
+</view>
 </view>
 </view>
 
