@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+
   <view class='list-msg2' bindtap='bindShowMsg'>
       <text>{{dropdown}}</text>
   </view>
@@ -12,17 +13,44 @@
   </view>
 
   <view class="Semester_btn">
-  <block wx:for="{{semester_view}}">
-    <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[index]}}</button>
+
+    <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[0]}}</button>
     <view class="Instructions">
       <textarea disabled="true" id="instructions">
-        <view style="margin-left: 5%">{{message_Scholarship1}}: </view>
-        <view style="margin-left: 5%">{{message_Scholarship2}}: </view>
-        <view style="margin-left: 5%">{{message_Scholarship3}}: </view>
+        <block wx:for="{{result20192}}">
+      <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
+</block> 
+
         <view></view>
       </textarea>
     </view>
-  </block>
+    </view>
+    
+<view class="Semester_btn">
+
+<button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[1]}}</button>
+<view class="Instructions">
+  <textarea disabled="true" id="instructions">
+    <block wx:for="{{result20201}}">
+      <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
+</block> 
+
+    <view></view>
+  </textarea>
+</view>
+</view>
+<view class="Semester_btn">
+
+<button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[2]}}</button>
+<view class="Instructions">
+  <textarea disabled="true" id="instructions">
+    <block wx:for="{{result20202}}">
+      <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
+</block> 
+
+    <view></view>
+  </textarea>
+</view>
 </view>
 
 </view>

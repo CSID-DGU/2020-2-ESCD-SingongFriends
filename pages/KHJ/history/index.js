@@ -203,11 +203,7 @@ that.ReqRes(url,20202);
   },
   onLoad: function () {
 var url="http://119.28.235.170/student-scholars/"+app.globalData.studentID// 아이디 불러와서 지정해야함 
-
 this.ReqRes(url,20191);
-
-
-
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
