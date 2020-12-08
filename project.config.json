@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -44,12 +44,6 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
@@ -104,9 +98,27 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/staris/page2/page2",
-          "pathName": "pages/staris/page2/page2",
+          "name": "pages/KKW/Menu/Menu",
+          "pathName": "pages/KKW/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Menu/Menu",
+          "pathName": "pages/NJM/Menu/Menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Register/Register",
+          "pathName": "pages/NJM/Register/Register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NJM/Scholarship/Scholarship",
+          "pathName": "pages/NJM/Scholarship/Scholarship",
+          "query": "",
           "scene": null
         }
       ]
