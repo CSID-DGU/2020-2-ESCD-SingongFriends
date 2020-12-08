@@ -23,7 +23,7 @@ Page({
   },
 
   gotoMenu: function (options) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../../NJM/Menu/Menu',
     })
   },

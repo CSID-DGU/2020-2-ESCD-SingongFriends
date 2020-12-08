@@ -21,18 +21,16 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "useIsolateContext": true,
-    "useCompilerModule": true,
+    "useCompilerModule": false,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": []
+    "useMultiFrameRuntime": false,
+    "useApiHook": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
@@ -56,74 +54,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "pages/staris/page1/page1",
-          "pathName": "pages/staris/page1/page1",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/staris/page2/page2",
-          "pathName": "pages/staris/page2/page2",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": 3,
-          "name": "pages/KKW/Curriculum/Curriculum",
-          "pathName": "pages/KKW/Curriculum/Curriculum",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/KKW/BasicComponents/BasicComponents",
-          "pathName": "pages/KKW/BasicComponents/BasicComponents",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/NJM/Login/Login",
-          "pathName": "pages/NJM/Login/Login",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/NJM/Payment/Payment",
-          "pathName": "pages/NJM/Payment/Payment",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/KKW/Menu/Menu",
-          "pathName": "pages/KKW/Menu/Menu",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Menu/Menu",
-          "pathName": "pages/NJM/Menu/Menu",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Register/Register",
-          "pathName": "pages/NJM/Register/Register",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NJM/Scholarship/Scholarship",
-          "pathName": "pages/NJM/Scholarship/Scholarship",
-          "query": "",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }

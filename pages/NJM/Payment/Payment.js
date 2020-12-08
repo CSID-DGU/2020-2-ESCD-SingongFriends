@@ -398,32 +398,27 @@ this.ReqRes(url);
         title: "确定要缴纳吗？",
         success (res) {
           if (res.confirm) {
-
-
             wx.request({
-              url:"http://119.28.235.170/students/student/"+app.globalData.studentID+"/student-expenses/semester/20181",
+              url:"http://119.28.235.170/students/student/"+app.globalData.studentID+"/student-expenses/semester/20202",
                method: 'GET',
                data:{},
                success: function (res) {    
                 console.log(res.data.length)
-                  if(res.data.length!=0){
-console.log("이미 납부했어")
-wx.showModal({
-  title: "이미 납부 하셨습니다",
-  cancelText:"",
-  confirmText: "확인"
-})
-                  }else{
+                  if(res.data.length!=0) {
+                    console.log("이미 납부했어")
+                    wx.showModal({
+                      title: "已付清。",
+                      showCancel: false
+                    })
+                  } else {
                     that.pay();
                   }
-
-                 },
-               fail: function(res){       },
-               complete: function(res){ 
-            //that.pay();
-                  }
-             });
-      
+                },
+                fail: function(res) {
+                },
+                complete: function(res) {
+                }
+             });      
           }
         }
       })
@@ -434,42 +429,32 @@ wx.showModal({
         confirmText: "확인",
         success (res) {
           if (res.confirm) {
-
             wx.request({
               url:"http://119.28.235.170/students/student/"+app.globalData.studentID+"/student-expenses/semester/20202",
-               method: 'GET',
-               data:{},
-               success: function (res) {    
+              method: 'GET',
+              data:{},
+              success: function (res) {    
                 console.log(res.data.length)
                   if(res.data.length!=0){
-
-  console.log("이미 납부했어")
-  wx.showModal({
-    title: "이미 납부 하셨습니다",
-    cancelText:"",
-    confirmText: "확인"
-  })
-                  }else{
+                    console.log("이미 납부했어")
+                    wx.showModal({
+                      title: "이미 납부하셨습니다.",
+                      showCancel: false,
+                      confirmText: "확인"
+                    })
+                  } else {
                     that.pay();
                   }
-
-                 },
-               fail: function(res){       },
-               complete: function(res){ 
-            //that.pay();
-                  }
+                },
+                fail: function(res){                  
+                },
+                complete: function(res){
+                }
              });
-
           }
         }
       })
     }
-    /*
-    this.pay();
-    wx.navigateTo({
-      url: '../../staris/page2/page2',
-    })
-    */
   },
 
   bindShowMsg() {

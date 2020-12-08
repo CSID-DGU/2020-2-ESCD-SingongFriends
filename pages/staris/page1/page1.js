@@ -48,7 +48,9 @@ Page({
     message_Receipt: "납부내역",
     message_Amount: "금액",
     message_Semester: "학기",
-    message_Complete: "납부 완료"
+    message_Complete: "납부 완료",
+    won: "원",
+    message_gotoMenu: "메뉴로 이동"
   },
 
   getOpenid:function(){
@@ -168,14 +170,18 @@ Page({
         message_Receipt: "납부내역",
         message_Amount: "금액",
         message_Semester: "학기",
-        message_Complete: "납부 완료"
+        message_Complete: "납부 완료",
+        won: "원",
+        message_gotoMenu: "메뉴로 이동"
       })
     } else if (that.data.dropdown == "中文") {
       this.setData({
         message_Receipt: "缴款明细",
         message_Amount: "款子",
         message_Semester: "学期",
-        message_Complete: "缴讫"
+        message_Complete: "缴讫",
+        won: "won",
+        message_gotoMenu: "移动到菜单"
       })
     }
 
@@ -205,16 +211,7 @@ Page({
        console.log(k[i]);
      }
   },
-
-  go:function() {
-  console.log("늉");
-  },
-
-  gopage2:function() {
-    wx.navigateTo({
-      url: '../page2/page2',
-    })
-  },
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -265,6 +262,12 @@ Page({
 
   },
 
+  gotoMenu: function (options) {
+    wx.redirectTo({
+      url: '../../NJM/Menu/Menu',
+    })
+  },
+
   bindShowMsg() {
     this.setData({
         select:!this.data.select
@@ -284,14 +287,18 @@ Page({
         message_Receipt: "납부내역",
         message_Amount: "금액",
         message_Semester: "학기",
-        message_Complete: "납부 완료"
+        message_Complete: "납부 완료",
+        won: "원",
+        message_gotoMenu: "메뉴로 이동"
       })
     } else if (name == "中文") {
       this.setData({
         message_Receipt: "缴款明细",
         message_Amount: "款子",
         message_Semester: "学期",
-        message_Complete: "缴讫"
+        message_Complete: "缴讫",
+        won: "won",
+        message_gotoMenu: "移动到菜单"
       })
     }
   }

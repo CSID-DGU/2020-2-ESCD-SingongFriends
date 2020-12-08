@@ -1,10 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-
   <view class='list-msg2' bindtap='bindShowMsg'>
       <text>{{dropdown}}</text>
   </view>
-
   <view class="select_box" wx:if="{{select}}">
       <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
       <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
@@ -14,49 +12,62 @@
   </view>
 
   <view class="Semester_btn">
-
-    <view wx:if="{{result20192.length!=0}}">
-    <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[0]}}</button>
-    <view class="Instructions">
-      <textarea disabled="true" id="instructions">
-        <block wx:for="{{result20192}}">
-      <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
-</block> 
-
-        <view></view>
-      </textarea>
+    <view wx:if="{{flag}}">
+      <view id = "semester_btn">{{message_noData}}</view>
     </view>
-    </view></view>
+  </view>
+
+  <view class="Semester_btn">
+    <view wx:if="{{result20191.length!=0}}">
+      <view id = "semester_btn">{{semester_view[0]}}</view>
+      <view class="Instructions">
+        <textarea disabled="true" id="instructions">
+          <block wx:for="{{result20191}}">
+            <view style="margin-left: 5%"> {{item.fund}} : {{item.money}} {{won}}</view>
+          </block>
+        </textarea>
+      </view>
+    </view>
+  </view>
+  
+  <view class="Semester_btn">
+    <view wx:if="{{result20192.length!=0}}">
+      <view id = "semester_btn">{{semester_view[1]}}</view>
+      <view class="Instructions">
+        <textarea disabled="true" id="instructions">
+          <block wx:for="{{result20192}}">
+            <view style="margin-left: 5%"> {{item.fund}} : {{item.money}} {{won}}</view>
+          </block>
+        </textarea>
+      </view>
+    </view>
+  </view>
     
-<view class="Semester_btn">
+  <view class="Semester_btn">
+    <view wx:if="{{result20201.length!=0}}">
+      <view id = "semester_btn">{{semester_view[2]}}</view>
+      <view class="Instructions">
+        <textarea disabled="true" id="instructions">
+        <block wx:for="{{result20201}}">
+          <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
+        </block>
+        </textarea>
+      </view>
+    </view>
+  </view>
 
-  <view wx:if="{{result20201.length!=0}}">
-<button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[1]}}</button>
-<view class="Instructions">
-  <textarea disabled="true" id="instructions">
-    <block wx:for="{{result20201}}">
-      <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
-</block> 
+  <view class="Semester_btn">
+    <view wx:if="{{result20202.length!=0}}">
+      <view id = "semester_btn">{{semester_view[3]}}</view>
+      <view class="Instructions">
+        <textarea disabled="true" id="instructions">
+        <block wx:for="{{result20202}}">
+          <view style="margin-left: 5%"> {{item.fund}} : {{item.money}} {{won}}</view>
+        </block>
+        </textarea>
+      </view>
+    </view>
+  </view>
 
-    <view></view>
-  </textarea>
-</view>
-</view>
-</view>
-<view class="Semester_btn">
-
-  <view wx:if="{{result20202.length!=0}}">
-<button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[2]}}</button>
-<view class="Instructions">
-  <textarea disabled="true" id="instructions">
-    <block wx:for="{{result20202}}">
-      <view style="margin-left: 5%"> {{item.fund}} :   {{item.money}} {{won}}</view>
-</block> 
-
-    <view></view>
-  </textarea>
-</view>
-</view>
-</view>
 
 </view>

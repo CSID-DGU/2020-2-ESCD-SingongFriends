@@ -7,12 +7,18 @@
       <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
       <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
   </view>
-  <view class="ctrtext" id="ctr" bindtap="gopage2">{{message_Receipt}}</view><!--缴款明细-->
+  <view class="ctrtext" id="ctr">{{message_Receipt}}</view><!--缴款明细-->
 
   <block wx:for="{{result}}">
-      <view class="ctrtext">
-        <text>{{message_Amount}}:  {{item.amountBeforeReduction}}  {{semester_view[index]}}{{message_Semester}} </text><!--款子,    学期   -->
-        <text id="state">{{message_Complete}}</text><!--交卷完毕-->
+      <view class="ctrtext">        
+        <view>{{semester_view[index]}}{{message_Semester}}</view>
+          <!--款子,    学期   -->        
+        <view>{{message_Amount}}:  {{item.amountBeforeReduction}}{{won}}</view>
+        <view><text id="state">{{message_Complete}}</text></view><!--交卷完毕-->
       </view>
   </block>
+
+  <view class="goToMenu">
+    <button id="gotoMenu" bindtap="gotoMenu" style="color:#fff">{{message_gotoMenu}}</button>
+  </view>
 </view>

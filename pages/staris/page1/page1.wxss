@@ -26,6 +26,16 @@
   background-color: rgb(197, 253, 253);
 }
 
+.goToMenu {
+  width: 95%;
+}
+
+#gotoMenu {
+  margin: 30px 0 10px 0;
+  background-color: #BFBFBF;
+  width: 100%;
+}
+
 .select_box {
   background-color: #eee;
   width: 24%;
