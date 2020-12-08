@@ -1,2 +1,65 @@
 /* pages/BasicComponents/BasicComponents.wxss */
 @import "../lib/common.wxss";
+
+.select_box {
+  background-color: #eee;
+  width: 24%;
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+  animation: myfirst 0.5s;
+  margin-left: 34%;
+}
+
+@keyframes myfirst {
+  from {
+      height: 0px;
+  }
+  to {
+      height: 52px;
+  }
+}
+
+.select_one {
+  height: 25px;
+  line-height: 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+.list-msg2 {
+  margin-top: 10px;
+  width: 24%;
+  text-align: center;
+  height: 23px;
+  border: 1px solid #ccc;
+  margin-left: 34%;
+  position: absolute;
+  background-color: white;
+  padding-top: 5px;
+}
+
+.Fees {
+  width: 100%;
+}
+
+ /* table header */
+.table_header{
+  display: flex;
+  justify-content: space-between; /* The item is located in a container with blank spaces between the rows. */
+  background-color: whitesmoke;
+  width: 100%;
+  font-size: x-small;
+} 
+
+.th{
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border: 1px solid black;
+  width: 50%;
+  flex-basis: 50%;
+  font-size: 10px;
+  padding: 20rpx;
+}

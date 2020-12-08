@@ -12,7 +12,14 @@ Page({
     recommend:["System Software",
      "Basic Programming",
     ],
-    movable: false
+    movable: false,
+
+    select: false,
+    dropdown: "Language",
+
+    message_1: "미이수 과목",
+    message_2: "추천 과목은 빨간색",
+    message_3: "이수 과목"
 
   },
 
@@ -29,6 +36,25 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log("current language: " + getApp().globalData.language);
+    var that=this
+    that.setData({
+      dropdown: getApp().globalData.language
+    });
+
+    if (that.data.dropdown == "한국어") {
+      this.setData({
+        message_1: "미이수 과목",
+        message_2: "빨간색은 추천 과목입니다",
+        message_3: "이수 과목"
+      })
+    } else if (that.data.dropdown == "中文") {
+      this.setData({
+        message_1: "课程未选",
+        message_2: "红色是推荐路线",
+        message_3: "已采取学科"
+      })
+    }
   
     var that=this
     wx.request({
@@ -109,4 +135,32 @@ Page({
     })
   },
 
+  bindShowMsg() {
+    this.setData({
+        select:!this.data.select
+    })
+  },
+
+  mySelect(e) {
+    var name = e.currentTarget.dataset.name
+    getApp().globalData.language = name
+    this.setData({
+        dropdown: name,
+        select: false
+    })
+
+    if (name == "한국어") {
+      this.setData({
+        message_1: "미이수 과목",
+        message_2: "추천 과목은 빨간색",
+        message_3: "이수 과목"
+      })
+    } else if (name == "中文") {
+      this.setData({
+        message_1: "课程未选",
+        message_2: "红色是推荐路线",
+        message_3: "已采取学科"
+      })
+    }
+  }
 })

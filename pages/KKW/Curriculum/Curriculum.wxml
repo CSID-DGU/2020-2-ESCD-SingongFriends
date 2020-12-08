@@ -1,20 +1,28 @@
+<view class='container'>
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
+</view>
+
 <view class='section'>
   <marquee text="adfadfadsf">
   </marquee>
 </view>
 
-
-
 <view calss='section'>
   <view class="flex justify-center">
-    <view class="basis-60per bg-orange flex justify-center titleFont">课程未选</view>
+    <view class="basis-60per bg-orange flex justify-center titleFont" style="margin-top: 10%">{{message_1}}</view>
     <!-- 课程未选 미이수과목 -->
   </view>
   <view class='section'>
     <view class="line"></view>
   </view>
-  <view class="flex justify-right" style="color: red; font-size:80%; margin-left:60%; margin-bottom:1%;">
-    ※红色是推荐路线※
+  <view class="flex justify-right" style="color: red; font-size:80%; margin-left:57%; margin-bottom:1%;">
+    ※{{message_2}}※
     <!-- ※빨간색은 추천 과목입니다※ -->
   </view>
   <view></view>
@@ -87,10 +95,9 @@
   </view>
 </view>
 
-
 <view class='section'>
   <view class="flex justify-center">
-    <view class="basis-60per bg-gray flex justify-center titleFont">已采取学科</view>
+    <view class="basis-60per bg-gray flex justify-center titleFont">{{message_3}}</view>
     <!-- 已采取学科 이수과목 -->
   </view>
   <view class='section'>

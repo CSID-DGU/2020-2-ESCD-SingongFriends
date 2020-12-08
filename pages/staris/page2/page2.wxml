@@ -11,10 +11,10 @@
   <view class="ctrtext">{{message_Notification}}</view><!--已正常缴纳。 谢谢。-->
 
   <block>
-    <view class="ctrtext2"  bindtap="go">
+    <view class="ctrtext2"  bindtap="go" style="padding : 10px 0 10px 0">
       <text >{{message_PayAmount}} :</text><text class="cost"> {{goji}}\n\n</text><!--缴款额-->
       <text >{{message_PaySemester}} : </text> <text class="semester"> {{semester}}\n\n</text><!--缴费学期-->
-      <text class="state">{{message_PayDate}} : {{state}} </text><!--缴款日期-->
+      <text class="state">{{message_PayCondition}} : {{state}} </text><!--缴款日期-->
     </view>
   </block>
 

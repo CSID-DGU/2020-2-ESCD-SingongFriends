@@ -1,13 +1,28 @@
 <!--index.wxml-->
 <view class="container">
+  <view class='list-msg2' bindtap='bindShowMsg'>
+      <text>{{dropdown}}</text>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+      <view class="select_one" bindtap="mySelect" data-name="한국어">한국어</view>
+      <view class="select_one" bindtap="mySelect" data-name="中文">中文</view>
+  </view>
   <view class="Scholarship">
-    <text id="scholarship">장학</text>
+    <text id="scholarship">{{message_Scholarship}}</text>
   </view>
 
+  <view class="Semester_btn">
   <block wx:for="{{semester_view}}">
-    <view class="semester_btn">
-      <button bindtap='image2_show' style="border: 1px solid black;">{{semester_view[index]}}</button>
+    <button bindtap='show' style="border: 1px solid black;" id = "semester_btn">{{semester_view[index]}}</button>
+    <view class="Instructions">
+      <textarea disabled="true" id="instructions">
+        <view style="margin-left: 5%">{{message_Scholarship1}}: </view>
+        <view style="margin-left: 5%">{{message_Scholarship2}}: </view>
+        <view style="margin-left: 5%">{{message_Scholarship3}}: </view>
+        <view></view>
+      </textarea>
     </view>
   </block>
+</view>
 
 </view>
