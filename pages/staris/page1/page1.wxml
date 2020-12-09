@@ -11,7 +11,7 @@
 
   <block wx:for="{{result}}">
       <view class="ctrtext">        
-        <view>{{semester_view[index]}}{{message_Semester}}</view>
+        <view>{{semester_view[index]}}{{message_Semester}} {{item.semester}}</view>
           <!--款子,    学期   -->        
         <view>{{message_Amount}}:  {{item.amountBeforeReduction}}{{won}}</view>
         <view><text id="state">{{message_Complete}}</text></view><!--交卷完毕-->

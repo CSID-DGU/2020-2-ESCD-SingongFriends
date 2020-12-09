@@ -8,7 +8,7 @@ Page({
   data: {
     pay:"4,580,000",
     pay1:4580000,
-    pay2:"",
+    pay2:"0",
     pay3:"",
     payment:0,
 
@@ -109,7 +109,8 @@ Page({
         var money=res.data
         var sum=0
         for (var i=0;i<money.length;i++){
-          sum+=money[i].money;
+          if (money[i].semester==20202){
+          sum+=money[i].money;}
         }
         var len=sum.toString().length;
         var stramount=sum.toString();
@@ -117,12 +118,12 @@ Page({
         //console.log(goji);
        
         newstr=that.returnswitch(stramount);
-        that.setData({
-        
-          pay2:newstr,
-        //  pay3:goji
-        })
-
+        if (newstr.length!=0){
+          that.setData({
+            pay2:newstr,
+          //  pay3:goji
+          })
+  }
         console.log("sum : "+sum);
        //that.data.arobj.push(JSON.stringify(res.data));
         var goji=that.data.pay1-sum;
