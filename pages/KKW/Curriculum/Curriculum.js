@@ -11,6 +11,8 @@ Page({
     
     recommend:["System Software",
      "Basic Programming",
+     "Computer Algorithm and Training",
+     "Computer Networking",
     ],
     movable: false,
 
