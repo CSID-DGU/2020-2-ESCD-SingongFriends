@@ -52,7 +52,7 @@ public class CourseController {
                 new CourseDTO.CourseHistoryGet(new ArrayList<>(), new ArrayList<>());
         List<Course> newCourses = courseRepository.findAll();
         HashMap<Integer, Integer> map = new HashMap<>();
-        List<StudentCourse> dones = studentCourseRepository.findAll();
+        List<StudentCourse> dones = studentCourseRepository.findByStudentId(studentId);
         List<CourseDTO.CourseGet> undoneList = new ArrayList<>();
         List<CourseDTO.CourseGet> doneList = new ArrayList<>();
         for (int i=0; i < newCourses.size(); i++) {

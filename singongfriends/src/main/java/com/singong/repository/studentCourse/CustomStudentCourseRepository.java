@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CustomStudentCourseRepository {
     List<StudentCourse> findByStudentIdAndStudentCourseId(int studentId, int courseId);
+    List<StudentCourse> findByStudentId(int studentId);
 }

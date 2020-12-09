@@ -28,4 +28,12 @@ public class StudentCourseRepositoryImpl extends QuerydslRepositorySupport imple
                 .where(qStudentCourse.course.courseId.eq(courseId))
                 .fetch();
     }
+
+    public List<StudentCourse> findByStudentId(int studentId) {
+        JPAQueryFactory queryFactory = new JPAQueryFactory(em);
+        QStudentCourse qStudentCourse = new QStudentCourse("qStudentCourse");
+        return queryFactory.selectFrom(qStudentCourse)
+                .where(qStudentCourse.student.studentId.eq(studentId))
+                .fetch();
+    }
 }
