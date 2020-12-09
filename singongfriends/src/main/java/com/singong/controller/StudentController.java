@@ -89,7 +89,7 @@ public class StudentController {
     }
 
     @PostMapping("/students/courses")
-    public ResponseEntity<List<StudentCourse>> doneCourses(@RequestBody List<StudentCourseDTO.createStudentCourse> courses) {
+    public ResponseEntity<List<StudentCdourse>> doneCourses(@RequestBody List<StudentCourseDTO.createStudentCourse> courses) {
         List<StudentCourse> studentCourses = new ArrayList<>();
         courses.stream().forEach((x) -> {
             Student student = studentRepository.getOne(x.getStudentId());

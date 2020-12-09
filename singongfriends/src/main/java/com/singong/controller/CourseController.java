@@ -51,20 +51,20 @@ public class CourseController {
         CourseDTO.CourseHistoryGet response =
                 new CourseDTO.CourseHistoryGet(new ArrayList<>(), new ArrayList<>());
         List<Course> newCourses = courseRepository.findAll();
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, CourseDTO.CourseGet> map = new HashMap<>();
         List<StudentCourse> dones = studentCourseRepository.findByStudentId(studentId);
         List<CourseDTO.CourseGet> undoneList = new ArrayList<>();
         List<CourseDTO.CourseGet> doneList = new ArrayList<>();
         for (int i=0; i < newCourses.size(); i++) {
             Course course = newCourses.get(i);
-            map.put(course.getCourseId(), i);
-            undoneList.add(new CourseDTO.CourseGet(
-                    course.getCourseId(), course.getCourseTitle(), course.getPoint()));
+            CourseDTO.CourseGet newObj =  new CourseDTO.CourseGet(
+                    course.getCourseId(), course.getCourseTitle(), course.getPoint());
+            map.put(course.getCourseId(), newObj);
+            undoneList.add(newObj);
         }
         for (StudentCourse studentCourse : dones) {
             if (map.containsKey(studentCourse.getCourse().getCourseId())) {
-                int index = map.get(studentCourse.getCourse().getCourseId());
-                undoneList.remove(index);
+                undoneList.remove(map.get(studentCourse.getCourse().getCourseId()));
             }
             doneList.add(new CourseDTO.CourseGet(
                     studentCourse.getCourse().getCourseId(), studentCourse.getCourse().getCourseTitle(),
