@@ -245,7 +245,7 @@ Page({
        method: 'POST',
        data:{
          studentCode: this.data.stID,
-         password: this.data.stID,
+         password: this.data.stPW,
          wechatToken: this.data.openId
        },
        success: function (res) {
