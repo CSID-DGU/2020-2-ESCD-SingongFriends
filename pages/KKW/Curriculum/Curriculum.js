@@ -13,6 +13,8 @@ Page({
      "Basic Programming",
      "Computer Networking",
      
+     "Computer Algorithm and Training",
+    
     ],
     movable: false,
 
@@ -60,7 +62,7 @@ Page({
   
     var that=this
     wx.request({
-     url:'http://119.28.235.170/student-courses/'+app.globalData.studentID,
+      url:'http://119.28.235.170/student-courses/'+getApp().globalData.studentID,
       method: 'GET',
       // data:{
       //   studentId:app.globalData.studentID
