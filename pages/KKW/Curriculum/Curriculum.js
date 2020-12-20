@@ -11,6 +11,8 @@ Page({
     
     recommend:["System Software",
      "Basic Programming",
+     "Computer Networking",
+     
     ],
     movable: false,
 
