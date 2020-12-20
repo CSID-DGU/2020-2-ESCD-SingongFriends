@@ -1,4 +1,4 @@
-# 💳 2020-2-ESCD2-SingongFriends-1
+# 💳 2020-2-ESCD-SingongFriends-1
 
 2020 동국대학교 기업사회 맞춤형 프로젝트 2
 
